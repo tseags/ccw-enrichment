@@ -1,0 +1,322 @@
+{
+  "saved_at": "2026-04-13T17:43:57.692574+00:00",
+  "preflight": {
+    "jsonl_counties_with_empty": [
+      "alpine",
+      "amador",
+      "butte",
+      "calaveras",
+      "el-dorado",
+      "fresno",
+      "glenn",
+      "humboldt",
+      "imperial",
+      "kings",
+      "los-angeles",
+      "madera",
+      "mariposa",
+      "mendocino",
+      "merced",
+      "modoc",
+      "mono",
+      "napa",
+      "nevada",
+      "orange",
+      "placer",
+      "plumas",
+      "riverside",
+      "san-benito",
+      "san-diego",
+      "san-luis-obispo",
+      "santa-cruz",
+      "shasta",
+      "sierra",
+      "siskiyou",
+      "stanislaus",
+      "sutter",
+      "tehama",
+      "trinity",
+      "tulare",
+      "tuolumne",
+      "ventura",
+      "yuba"
+    ],
+    "csv_counties_with_empty": [
+      "alpine",
+      "amador",
+      "butte",
+      "calaveras",
+      "el-dorado",
+      "fresno",
+      "glenn",
+      "humboldt",
+      "imperial",
+      "kings",
+      "los-angeles",
+      "madera",
+      "mariposa",
+      "mendocino",
+      "merced",
+      "modoc",
+      "mono",
+      "napa",
+      "nevada",
+      "orange",
+      "placer",
+      "plumas",
+      "riverside",
+      "san-benito",
+      "san-diego",
+      "san-luis-obispo",
+      "santa-cruz",
+      "shasta",
+      "sierra",
+      "siskiyou",
+      "stanislaus",
+      "sutter",
+      "tehama",
+      "trinity",
+      "tulare",
+      "tuolumne",
+      "ventura",
+      "yuba"
+    ],
+    "target_union": [
+      "alpine",
+      "amador",
+      "butte",
+      "calaveras",
+      "el-dorado",
+      "fresno",
+      "glenn",
+      "humboldt",
+      "imperial",
+      "kings",
+      "los-angeles",
+      "madera",
+      "mariposa",
+      "mendocino",
+      "merced",
+      "modoc",
+      "mono",
+      "napa",
+      "nevada",
+      "orange",
+      "placer",
+      "plumas",
+      "riverside",
+      "san-benito",
+      "san-diego",
+      "san-luis-obispo",
+      "santa-cruz",
+      "shasta",
+      "sierra",
+      "siskiyou",
+      "stanislaus",
+      "sutter",
+      "tehama",
+      "trinity",
+      "tulare",
+      "tuolumne",
+      "ventura",
+      "yuba"
+    ]
+  },
+  "per_county_before": {
+    "alpine": {
+      "total": 5,
+      "with_url": 4,
+      "empty_url": 1
+    },
+    "amador": {
+      "total": 34,
+      "with_url": 13,
+      "empty_url": 21
+    },
+    "butte": {
+      "total": 16,
+      "with_url": 10,
+      "empty_url": 6
+    },
+    "calaveras": {
+      "total": 36,
+      "with_url": 16,
+      "empty_url": 20
+    },
+    "el-dorado": {
+      "total": 23,
+      "with_url": 18,
+      "empty_url": 5
+    },
+    "fresno": {
+      "total": 59,
+      "with_url": 7,
+      "empty_url": 52
+    },
+    "glenn": {
+      "total": 21,
+      "with_url": 1,
+      "empty_url": 20
+    },
+    "humboldt": {
+      "total": 9,
+      "with_url": 4,
+      "empty_url": 5
+    },
+    "imperial": {
+      "total": 5,
+      "with_url": 3,
+      "empty_url": 2
+    },
+    "kings": {
+      "total": 46,
+      "with_url": 2,
+      "empty_url": 44
+    },
+    "los-angeles": {
+      "total": 45,
+      "with_url": 43,
+      "empty_url": 2
+    },
+    "madera": {
+      "total": 61,
+      "with_url": 6,
+      "empty_url": 55
+    },
+    "mariposa": {
+      "total": 14,
+      "with_url": 0,
+      "empty_url": 14
+    },
+    "mendocino": {
+      "total": 6,
+      "with_url": 5,
+      "empty_url": 1
+    },
+    "merced": {
+      "total": 23,
+      "with_url": 0,
+      "empty_url": 23
+    },
+    "modoc": {
+      "total": 22,
+      "with_url": 10,
+      "empty_url": 12
+    },
+    "mono": {
+      "total": 17,
+      "with_url": 9,
+      "empty_url": 8
+    },
+    "napa": {
+      "total": 23,
+      "with_url": 17,
+      "empty_url": 6
+    },
+    "nevada": {
+      "total": 24,
+      "with_url": 0,
+      "empty_url": 24
+    },
+    "orange": {
+      "total": 43,
+      "with_url": 42,
+      "empty_url": 1
+    },
+    "placer": {
+      "total": 53,
+      "with_url": 47,
+      "empty_url": 6
+    },
+    "plumas": {
+      "total": 19,
+      "with_url": 2,
+      "empty_url": 17
+    },
+    "riverside": {
+      "total": 68,
+      "with_url": 65,
+      "empty_url": 3
+    },
+    "san-benito": {
+      "total": 30,
+      "with_url": 12,
+      "empty_url": 18
+    },
+    "san-diego": {
+      "total": 66,
+      "with_url": 25,
+      "empty_url": 41
+    },
+    "san-luis-obispo": {
+      "total": 5,
+      "with_url": 4,
+      "empty_url": 1
+    },
+    "santa-cruz": {
+      "total": 14,
+      "with_url": 10,
+      "empty_url": 4
+    },
+    "shasta": {
+      "total": 25,
+      "with_url": 1,
+      "empty_url": 24
+    },
+    "sierra": {
+      "total": 8,
+      "with_url": 2,
+      "empty_url": 6
+    },
+    "siskiyou": {
+      "total": 15,
+      "with_url": 0,
+      "empty_url": 15
+    },
+    "stanislaus": {
+      "total": 14,
+      "with_url": 13,
+      "empty_url": 1
+    },
+    "sutter": {
+      "total": 20,
+      "with_url": 0,
+      "empty_url": 20
+    },
+    "tehama": {
+      "total": 31,
+      "with_url": 20,
+      "empty_url": 11
+    },
+    "trinity": {
+      "total": 19,
+      "with_url": 0,
+      "empty_url": 19
+    },
+    "tulare": {
+      "total": 46,
+      "with_url": 21,
+      "empty_url": 25
+    },
+    "tuolumne": {
+      "total": 22,
+      "with_url": 17,
+      "empty_url": 5
+    },
+    "ventura": {
+      "total": 32,
+      "with_url": 16,
+      "empty_url": 16
+    },
+    "yuba": {
+      "total": 20,
+      "with_url": 0,
+      "empty_url": 20
+    }
+  },
+  "overall_before": {
+    "total": 1039,
+    "with_url": 465,
+    "empty_url": 574
+  }
+}

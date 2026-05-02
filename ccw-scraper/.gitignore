@@ -1,0 +1,10 @@
+.env
+.venv/
+.DS_Store
+
+# Scraped / downloaded assets (regenerate with run_enrich.py)
+data/enriched/images/
+
+# Master vendor CSV is data/enriched/all-vendors.csv only; ignore local copies / retries
+data/enriched/all-vendors.backup*.csv
+data/enriched/all-vendors.pre-*.csv

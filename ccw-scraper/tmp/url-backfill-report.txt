@@ -1,0 +1,28 @@
+URL backfill re-enrichment
+baseline_empty_url=tmp/backfill-before/all-vendors.before.csv (git-untracked enriched snapshot unavailable)
+skipped_invalid_url=1 (san-joaquin Straightline Defense LLC placeholder https://no website)
+temp_files=tmp/enrich-backfill-subset.csv, tmp/enrich-backfill-subset.out.csv, tmp/images/ (subset image staging; slug dirs merged into data/enriched/images/)
+target_subset_size=40
+crawl_success=24
+crawl_failed=14
+crawl_no_website=0
+crawl_parse_error=2
+merge_replaced=40
+
+Still failing after retry:
+los-angeles | CCW Permit Instruction Evans Gun World | failed | https://www.ccwpermitinstruction.com
+san-joaquin | C & World LLC | failed | https://www.cxsworld.net
+san-joaquin | Expert Firearms Training LLC | failed | https://www.goxswat.com
+san-joaquin | First Priority Security Consultant | failed | https://www.fps-inc.com
+san-joaquin | First Response Firearms & Tactical Trg | failed | https://www.firstresponsefirearms.com
+san-joaquin | Gover Group | failed | https://gscov.biz
+san-joaquin | KW Defense | parse_error | https://www.kwdefense.com
+san-joaquin | Legionarius Firearms Institute | failed | https://www.lifiguns.com
+san-joaquin | NIF - Northern Firearms Instruction | failed | https://www.ccwinti0cxw.com
+san-joaquin | Red Dot Self Defense | parse_error | https://www.facebook.com/reddotselfdefense
+san-joaquin | Ripon Technical Solutions | failed | https://www.ripontech.com
+san-joaquin | Rosargarten Security Training | failed | https://www.rosargentfirearm.com
+san-joaquin | Sober Tactics | failed | https://www.sobertactics.com
+san-joaquin | Silvercreek Security Academy | failed | https://www.scstacgov.com
+san-joaquin | Spartan Defense | failed | https://www.forinthesparton.com
+san-joaquin | Weapons Training School | failed | https://www.weaponsconstruiningschool.com

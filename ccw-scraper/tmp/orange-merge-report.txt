@@ -1,0 +1,64 @@
+Orange enrichment rerun report
+================================
+Orange target row count: 43
+
+Crawl status counts (orange rows in master after merge):
+  success: 37
+  failed: 5
+  no_website: 1
+  parse_error: 0
+
+Merge stats:
+  rows replaced: 43
+  unmatched keys: 0
+  duplicate key conflicts (updates): 0
+  duplicate key conflicts (master orange): 0
+
+Orange image slug folders copied from tmp/images/orange -> data/enriched/images/orange: 36
+  copied slugs:
+    - 10-8tac-com
+    - 5150heat-com
+    - adi-artemishq-com
+    - allsafedefense-com
+    - apexdefensivestrategies-com
+    - applicationtactical-com
+    - archerfirearmstraining-com
+    - artifexfirearmstraining-com
+    - basicgunsafety-com
+    - befastraining-com
+    - californiagunpermit-com
+    - calpatriotdefense-com
+    - civilianarmstraining-com
+    - coachkstraining-com
+    - comfortzoneassurance-com
+    - concealedcoalition-com
+    - dt-oc-com
+    - eliteccw-com
+    - evansgunworld-com
+    - fortitudeintl-net
+    - forzadefense-com
+    - ftatv-com
+    - hotrodsandhandguns-com
+    - magnaproducts-net
+    - managrouptrainingsolutions-com
+    - nottodaydefense-com
+    - oconlineguncert-com
+    - ontargetrange-com
+    - paragraph2-net
+    - safeinsight-net
+    - sanclementefirearmstraining-com
+    - sempersafe-us
+    - shootsafeacademy-com
+    - theccwschool-com
+    - trbtraining-com
+    - vipccwservices-com
+
+Orange vendors still failed after retry:
+  - CCW Permit Instruction
+  - Darells Shooting Sports
+  - Safe Path Firearms Training, LLC
+  - Self-Defense Firearms Training
+  - Sentri Institute Inc.
+
+Suspicious URLs (invalid host/placeholder/no website):
+  - Down Range Firearms Safety Training Academy -> <empty> (no website)

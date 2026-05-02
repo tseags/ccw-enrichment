@@ -1,0 +1,1988 @@
+<!DOCTYPE html><html lang="en" class="removeSetHeights js no-flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths wf-muli-n3-active wf-muli-n4-active wf-muli-i4-active wf-muli-n7-active wf-active has-webFonts"><head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<!-- Google Tag Manager for GA4 -->
+				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Libre+Franklin:500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|Montserrat:200,500,600,700,regular|" media="all"><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HHGEB3R8ZN&amp;l=cpDataLayerGA4&amp;cx=c&amp;gtm=4e6481h1"></script><script src="/Assets/Mystique/Shared/Scripts/webfontloader/webfont.js" type="text/javascript" async=""></script><script src="/Assets/Scripts/RWD/MediaFramework.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K73C5PS&amp;l=cpDataLayerGA4"></script><script>(function(w,d,s,l,i){w.GAMeasurementID='G-HHGEB3R8ZN';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type="text/javascript">
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+		}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+			</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script async="" src="https://docaccess.com/docbox.js"></script>
+	
+	<meta name="category0" content="Home">
+<meta name="category1" content="Government">
+<meta name="category2" content="Public Safety">
+<meta name="category3" content="Sheriff's Office">
+<meta name="category4" content="Programs &amp; Services">
+<meta name="category5" content="CCW">
+
+	
+	<meta name="theme-color" content="#010101">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+		<title>CCW- Concealed Weapon Permits | Tuolumne County, CA - Official Website</title>
+
+		<meta name="description" content="Facts and information regarding CCWs">
+		<meta name="keywords" content="CCW,concealed,weapon">
+			<script src="/Assets/Scripts/jQuery/jquery-3.7.1.min.js"></script><script src="https://js.monitor.azure.com/scripts/a/ai.0.js"></script>
+	<script src="/Assets/Scripts/jQuery/jquery-migrate-3.5.2.min.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var externalSiteDialogHeight = '390px';
+	var order = '';
+//--></script>
+	
+<link href="/-681783051.css" rel="stylesheet" type="text/css">	<link href="/-1465647691.css" rel="stylesheet" type="text/css">	<link href="/1087883929.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	<!--CPHeadContent-->
+	<script src="/739942322.js" type="text/javascript"></script>
+	
+	
+	
+	
+
+
+
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,700" media="all">
+<style>      .htmx-indicator{opacity:0}      .htmx-request .htmx-indicator{opacity:1; transition: opacity 200ms ease-in;}      .htmx-request.htmx-indicator{opacity:1; transition: opacity 200ms ease-in;}      </style><link rel="stylesheet" type="text/css" href="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/compliance.css"><link rel="stylesheet" type="text/css" href="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/fullCSS.bundle.css"><style>
+      .audioeye-skip-link {
+        display: inline-block !important;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        z-index: 50000 !important;
+      }
+      .audioeye-skip-link:focus, .audioeye-skip-link:active {
+        left: 0;
+        width: auto;
+        height: auto;
+        background: #fff;
+        color: #000;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        padding: 5px;
+        border: 3px solid #000;
+        transition: none;
+      }
+    </style><style data-docbox-sr-only="true">
+                .sr-only {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                }
+                
+                /* Highlight animation for returning focus 
+                .docaccess-returning-focus {
+                    outline: 3px solid #2563eb !important;
+                    outline-offset: 2px !important;
+                    position: relative;
+                    z-index: 10;
+                    animation: docaccess-pulse 2s ease-out;
+                }
+                */
+                
+                @keyframes docaccess-pulse {
+                    0% {
+                        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+                    }
+                    50% {
+                        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+                    }
+                    100% {
+                        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+                    }
+                }
+            </style></head>
+<body class="wide cpTextResizeOn doneLoading ae-ccw-concealed-weapon-permits-h1" data-audioeye-device-desktop="" data-audioeye-launcher=""><a href="#mainWrapTS" class="audioeye-skip-link">Skip To Main Content</a><div id="ae_enabled_site" class="ae-blurb-noaudio" role="status" aria-live="polite" data-nosnippet="" style="display: none;"><div><p data-modulename="launcher">This website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press "shift + =". Some assistive technologies may require the use of a passthrough function before this keystroke. For more information, activate the button labeled "Explore your accessibility options".</p></div></div><div id="divAjaxProgress" style="position: fixed; inset: 0px; text-align: center; border: 1px solid rgb(102, 102, 102); z-index: 90000000; height: 722px; width: 1282px; display: none;"><div id="divAjaxShade" style="position: fixed; inset: 0px; background: rgb(255, 255, 255); opacity: 0.5; height: 720px; width: 1280px;"></div><div id="divAjaxImgProgress" class="loading" style="position: relative; top: 360px; display: none;"><img src="/Common/images/ajax-loader.gif" alt="" title="Loading"><p>Loading</p></div></div>
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+	<div id="popoverModal" class="cp-PopOver cp-PopOver--modal cp-AdminWrap" style="position: fixed; display: none;">
+	<div class="cp-PopOver-header">
+		<h3 class="cp-PopOver-title" role="presentation" aria-hidden="true" tabindex="-1"></h3>
+		<button class="cp-Btn cp-PopOver-close" onclick="closePopOverModal(event)">
+			<svg class="cp-Icon--close" alt="close" title="close" role="presentation" aria-hidden="true" tabindex="-1">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconClose"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="cpPopOverBody" class="cp-PopOver-body">
+		<form id="cpPopOverForm" name="cpPopOverForm" novalidate=""></form>
+	</div>
+	<div id="cpPopOverFooter" class="cp-PopOver-footer">
+		<div class="cp-BtnGroup" id="actionButtons">
+			<!-- Action buttons will be dynamically added here -->
+		</div>
+	</div>
+</div>
+    <div id="fb-root"></div>
+<div id="skipToContentLinks" class="ae-exclude" role="presentation" aria-hidden="true" tabindex="-1">
+<a href="#ccbacd3300-95ff-4822-9ffc-3b4accbddcb0" target="_self" class="skipToContentLink ae-exclude" role="presentation" aria-hidden="true" tabindex="-1">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs" role="presentation"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIzaSyDWUuE-ifkbhxblF920N8MjpBdTg1Wt784">
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="5">
+    <input type="hidden" id="hdnContentCollectionID" value="44285208-4eed-4745-b2ab-6e3b8edb0abe">
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000">
+    <input type="hidden" id="hdnThemeID" value="22">
+    <input type="hidden" id="pageIsFrontEnd" value="true">
+    <input type="hidden" id="pageModuleID">
+    <input type="hidden" id="pagePageID" value="342">
+
+    <div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="overflow: visible;">
+                    
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700); 
+.alertText .customAlert {
+    color: #EAEAEA;
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 27px;
+    left: 57px;
+    line-height: 27px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+    width: 268px;
+}
+</style>
+  <div id="1_divAlertBar" class="alertToolbar cpToolbar" style="background: rgb(34, 34, 34); z-index: 2;">
+    <div id="1_divAlertToolbarInner" class="alertToolbarInner" style="font-size: 16px;">
+        <a href="/1170/Emergency-Alerts" id="1_lnkAlertText" class="alertText" style="border-right: 1px solid #000000;">
+            <img src="/Common/Images/AlertCenter/alertBarBlink.svg" id="1_imgDot" alt="Emergency Alert" class="redDot">
+            <span id="1_customAlert" class="customAlert">Emergency Alerts</span>
+        </a>
+        <span id="1_spnAlertContainer" class="alertContainer"><a href="/1170/Emergency-Alerts" target="_self" class="alert" style="border-left: 1px solid #000000; border-right: 1px solid #000000;background: #030303 url(/Common/images/AlertCenter/alertBarBlackTextBckg.png) repeat-x; color: #FFFFFF;">
+	Tuolumne County Emergency Alert Notification System
+	<span style="color: #85be9f;">Read On...</span>
+</a>
+</span>
+    </div>
+  </div>
+  <div id="1_divAlertBarEmpty" class="alertBarEmpty"></div>
+  
+
+
+
+<!-- Begin Signed Out Bar -->
+<div class="cpToolbar user public" style="z-index: 1;">
+    <div class="inner selfClear">
+        <p class="dropdown"><a href="/MyAccount/ProfileCreate" class="myConnections" id="signedOutToolbarCreateProfileButton">Create a Website Account</a> <span class="welcomeMessage">- Manage notification subscriptions, save form progress and more. &nbsp;&nbsp;</span></p>
+        <ul class="nav secondary" role="presentation">
+			<li><a href="/MyAccount" onkeypress="if (event.which == 13) this.onclick();" onclick="popupSignIn(); return false;" class="button" id="loggedOutToolbarSignInButton"><span>Website Sign In</span></a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').keypress(function (e) { if (e.which === 0) return; $(this).click(); });
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+        	event.preventDefault();
+        	window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+</script>
+<!-- End Signed Out Bar -->
+
+                </div>
+            <div id="bodyWrapper" style="padding-top: 91.7812px;">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cprole="structuralContainer" id="bodyContainerTS">
+<!-- Header Container --><header data-cprole="structuralContainer" id="headerContainerTS" class="fixedTopTS" style="top: 0px;">
+<div class="siteWrap"><div data-cprole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<a id="bannerLogoTS-48" style="			display: block; text-align: center;
+" class="bannerObject" href="/1526" target="_self"><img alt="Sheriffs Office Home Banner" class="bannerObject" height="154" src="/ImageRepository/Document?documentID=26958" width="416"></a>
+</div><div data-cprole="contentContainer" id="searchTS">	<div id="cccd31ead9-1e26-4f63-9b57-b1f92585273e" data-containerid="cd31ead9-1e26-4f63-9b57-b1f92585273e" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="5408939b-8a52-497c-aeab-191f937c5f8a">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col24 first last id8a3ccef1-88b5-4017-be2a-f4e42239294a" style="" data-widgetcontainerid="8a3ccef1-88b5-4017-be2a-f4e42239294a">
+	
+<div data-widget-id="4e49c167-b4c0-431c-a24d-ecf09e6d992a" data-widget-controller-path="/Layout/WidgetSearch">
+	
+	<script defer="" type="text/javascript" src="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+	<script defer="" src="/Areas/Layout/Assets/Scripts/Search.js" type="text/javascript"></script>
+	<script defer="" type="text/javascript">
+
+		$(document).ready(function () {
+			try {
+				$(".widgetSearchButton.widgetSearchButton4e49c167-b4c0-431c-a24d-ecf09e6d992a").click(function (e) {
+				e.preventDefault();
+					if (false||$("#ysnSearchOnlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a").is(':checked'))
+					{
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), Number(0));
+					}
+					else {
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), 0);
+					}
+			});
+			$("#searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a").keypress(function (e) {
+				if (window.clipboardData) {
+					if (e.keyCode === 13) {
+						if ($("#ysnSearchOnlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				} else {
+					if (e.which === 13) {
+						if ($("#ysnSearchOnlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				}
+				return true;
+			});
+
+				if (true) {
+					var currentRequest = null;
+					var $searchField = $("#searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a").autocomplete({
+						source: function (request, response) {
+							currentRequest = $.ajax({
+								url: '/Search/AutoComplete' + ($("#ysnSearchOnlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a").is(':checked') || false? '?departmentId=0' : ''),
+								dataType: "json",
+								timeout: 10000,
+								beforeSend: function () {
+									if (currentRequest != null) {
+										currentRequest.abort();
+									}
+								},
+								data:
+								{
+									term: request.term,
+								},
+								success: function (data) {
+									response(data);
+									$('.autoCompleteError').remove();
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "timeout") {
+										if ($("#searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a").siblings('.autoCompleteError').length == 0)
+											$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($("#searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a"));
+									}
+								}
+							});
+						},
+						html: true,
+						delay: 500,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+}
+}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	</script>
+
+	<section id="widgetPreviewSearch" class="widget widgetSearch skin52 widgetOptionSet38" style="display: block;">
+				<!-- For the button right and inside -->
+		<div class="widgetBody buttonRightInside">
+			<input class="widgetSearchBox widgetSearchBox4e49c167-b4c0-431c-a24d-ecf09e6d992a ui-autocomplete-input" cp5ph="true" id="searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a" name="searchField" onchange="searchBtnApplyQuery();" placeholder="Search..." type="text" value="" autocomplete="off" aria-label="Search Site">
+						<a href="/Search/Results" id="btnSearchIcon" class="widgetSearchButton widgetSearchButton4e49c167-b4c0-431c-a24d-ecf09e6d992a"><img alt="Search" class="imageHover" data-hover="/ImageRepository/Document?documentID=21817" data-image="/ImageRepository/Document?documentID=21818" src="/ImageRepository/Document?documentID=21818"></a>
+
+			<label class="searchLabel" aria-hidden="true" for="searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a">Search</label>
+		</div>
+
+	</section>
+
+
+<style scoped="">
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #FFFFFF;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #FFFFFF;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #FFFFFF;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #FFFFFF;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox4e49c167-b4c0-431c-a24d-ecf09e6d992a
+	{
+		color: #FFFFFF;
+		background: #010101; border: 0; border-radius: 5px; height: 65px; font-family: Libre Franklin; font-style: italic; font-size: 1.2em; padding: 0 75px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton4e49c167-b4c0-431c-a24d-ecf09e6d992a
+	{
+		margin: 2px 2px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept4e49c167-b4c0-431c-a24d-ecf09e6d992a
+	{
+		position: relative;
+		top: .125em;
+	}
+
+</style>
+
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.css">
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.theme.min.css">
+
+
+
+<script type="text/javascript">
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField4e49c167-b4c0-431c-a24d-ecf09e6d992a").value;
+	}
+	</script>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><nav data-cprole="nav" id="mainNav" class="siteNav mainNav" role="navigation" aria-label="Main">
+<ol id="mainNavMenu" data-parent="1526" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem1564" class="topMenuItem" role="none" data-pageid="1564" data-displaymegamenu="True" style="width: 34.1081%;"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup="true" aria-expanded="false" id="mainNavOurDepartment" class="navMainItem mainNavItem mainNavItem1 " href="/1564/Our-Department" target="_self" style="font-size: 18px;"><span style="display: inline;">   Our Department  </span></a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem1562" class="topMenuItem" role="none" data-pageid="1562" data-displaymegamenu="True" style="width: 37.9881%;"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup="true" aria-expanded="false" id="mainNavProgramsServices" class="navMainItem mainNavItem mainNavItem2 " href="/1562/Programs-Services" target="_self" style="font-size: 18px;"><span style="display: inline;">   Programs &amp; Services  </span></a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem1563" class="topMenuItem" role="none" data-pageid="1563" data-displaymegamenu="True" style="width: 27.9038%;"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup="true" aria-expanded="false" id="mainNavDivisions" class="navMainItem mainNavItem mainNavItem3 " href="/1563/Divisions" target="_self" style="font-size: 18px;"><span style="display: inline;">   Divisions  </span></a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1526&moduleID=&themeID=22&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cprole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;" role="presentation"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="0"></aside></nav></div>
+</header><!-- Banner --><div data-cprole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cprole="banner" id="banner1"><div data-cprole="structuralContainer" id="bannerSizingTS">
+<div data-cprole="structuralContainer" id="bannerSearchTS">
+<div class="siteWrap2"><div data-cprole="contentContainer" id="welcomeTS">	<div id="ccb62abd27-7e13-42f4-a6f3-7b4f4a5cc06d" data-containerid="b62abd27-7e13-42f4-a6f3-7b4f4a5cc06d" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+
+
+
+		<div id="bannerImagesJSON49" class="hidden"></div><div class="bannerObject external fixedBanner" id="bannerDivbanner1" style="min-height: 443.188px; top: 0px; left: -304.781px; right: 0px; position: absolute; overflow: hidden; z-index: -999999; padding: 0px;" data-image-scale="true"><img class="bannerObject" width="1280px" style="position: absolute; left: 0px; margin: 0px; width: 1889.56px;" src="/ImageRepository/Document?documentID=21804" data-is-delayed="false" alt=""></div>
+		
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":49,"ThemeID":22,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":139,"BannerOptionID":49,"FileName":"/ImageRepository/Document?documentID=21805","Height":516,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":140,"BannerOptionID":49,"FileName":"/ImageRepository/Document?documentID=21804","Height":516,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cprole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap2"><div data-cprole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main" tabindex="-1">
+<div data-cprole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cprole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cprole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer" role="navigation" aria-label="Breadcrumb">		<ol class="semanticList breadCrumbs">
+			<li><a class="breadCrumb" href="/">Home</a></li><li><a class="breadCrumb" href="/27/Government">Government</a></li><li><a class="breadCrumb" href="/298/Public-Safety">Public Safety</a></li><li><a class="breadCrumb" href="/1526/Sheriffs-Office">Sheriff's Office</a></li><li><a class="breadCrumb" href="/1562/Programs-Services">Programs &amp; Services</a></li><li id="currentBCPage" data-pageid="342">CCW</li>
+		</ol>
+
+	   
+    
+</div><div data-cprole="mainContentContainer" id="moduleContent">
+	
+	<div id="page" class="moduleContentNew">
+		
+
+	<input id="hdnPageID" name="hdnPageID" type="hidden" value="342">
+	<input id="hdnParentID" name="hdnParentID" type="hidden" value="1562">
+	<input id="hdnVersionID" name="hdnVersionID" type="hidden" value="1301">
+	<input id="pageMenuTitle" name="pageMenuTitle" type="hidden" value="CCW">
+	<input id="pageShowFeatureColumn" name="pageShowFeatureColumn" type="hidden" value="False">
+	<input id="hdnIsLayoutPage" name="hdnIsLayoutPage" type="hidden" value="False">
+	<input id="hdnPageStatus" name="hdnPageStatus" type="hidden" value="Published">
+
+				<h1 id="versionHeadLine" class="headline">
+
+CCW- Concealed Weapon Permits		</h1>
+	
+		<div id="ccbacd3300-95ff-4822-9ffc-3b4accbddcb0" data-containerid="bacd3300-95ff-4822-9ffc-3b4accbddcb0" class="pageContent cpGrid cpGrid24" data-contentcontainerbreakpoint="30">
+			
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="99329ea0-0929-47e7-acc4-e3b4fb8c2d9b">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col24 first last idf8e3a456-91a3-4533-997c-d0aa15aee76e" style="" data-widgetcontainerid="f8e3a456-91a3-4533-997c-d0aa15aee76e">
+	
+<div class="widget editor pageStyles wide" id="divEditor24d3aed8-ce75-4a90-881a-597146406c08" data-elementqueryclasses="{&quot;wide-narrow&quot;:&quot;min-width:25em&quot;}">
+	    <div class="fr-view responsiveEditor">
+
+
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;" id="isPasted"><strong><span style="font-size:21px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;"><span style="text-decoration: underline;">CCW - Concealed Weapon Permits</span></span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Office hours for permit pick up are Monday through Friday 9 AM to 4 PM (excluding holidays)</span></strong></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">This information is for <strong><span style="text-decoration: underline;">current residents of Tuolumne County</span></strong> desiring to obtain a permit to carry a concealed pistol, revolver, or other firearm from the Tuolumne County Sheriff’s Office. California Penal Code § 26150 and 26155 provide that a Sheriff of a county or the Chief or other head of municipal police department of any city, or city and county, shall issue or renew a permit to carry a pistol, revolver, or other firearm capable of being concealed upon the person (Concealed Carry Weapon permit).</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The Sheriff shall issue or renew a Concealed Weapons Permit under the following Conditions:</span></p><ul style="list-style-type: disc;" role="presentation"><ul><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant is a <strong>full-time</strong> resident of Tuolumne County.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant is the Recorded Owner, with the Department of Justice, of the pistol, revolver, or other firearm which will be listed on the permit.&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant is not a disqualified person, as determined in Penal Code § 26202.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant is at least 21 years of age.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant has completed a course of training as described in Penal Code § 26165.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">The Applicant must be free from any psychological conditions that might make the applicant unsuitable for carrying a firearm.</span></li></ul></ul><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Departmental Restrictions on Issuance of a Permit</span></strong></p><ul style="list-style-type: disc;" role="presentation"><ul><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Residence in the County for less than one (1) year. The one-year requirement may be waived if all the following are met:</span><ol style="list-style-type: circle;"><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Proof of Tuolumne County residency.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Currently possesses a valid CCW permit from another County.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Provides a letter of good standing from the County issuing the CCW permit.</span></li></ol></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Subject of a Restraining Order issued by any Court within the past five (5) years.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Conviction of driving under the influence of drugs/alcohol within the past five (5) years.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Conviction of a felony offense.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Conviction of a misdemeanor offense which renders one unlawful to possess a firearm under Penal Code § 12021.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Conviction of a drug offense under the Health and Safety Code within the past five (5) years.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Other cause to question residency or suitability of carrying a concealed weapon.</span></li></ul></ul><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;text-align:center;line-height:115%;"><a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/prohibcatmisd.pdf" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="CLICK HERE&nbsp;Version OptionsCCW- Concealed Weapon PermitsHeadlineApproved CCW Instructors (updated 4/22/2024) Opens in new window" class="docaccess-activated" data-docaccess-url="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/prohibcatmisd.pdf" data-url-hash="c36e205690b848bc170b6377ed093a49f3904831e891fa75ffacfcd20f1066b7" data-url-status="disabled"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#BF8F00;">CLICK HERE</span></strong><span class="ae-compliance-indent" style="display:none;">&nbsp;Version OptionsCCW- Concealed Weapon PermitsHeadlineApproved CCW Instructors (updated 4/22/2024)</span></a><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;for further categories that would prohibit a person from possessing firearms and being granted a CCW permit.</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; text-align: left; line-height: 115%;"><br></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; text-align: left; line-height: 115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">This information is for <span style="text-decoration: underline;"><strong>Out of State CCW applicants&nbsp;</strong></span></span><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">desiring to obtain a permit to carry a concealed pistol, revolver, or other firearm from the Tuolumne County Sheriff’s Office. California Penal Code § 26150 and 26155 provide that a Sheriff of a county or the Chief or other head of municipal police department of any city, or city and county, shall issue or renew a permit to carry a pistol, revolver, or other firearm capable of being concealed upon the person (Concealed Carry Weapon permit).</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The Sheriff shall issue or renew a Concealed Weapons Permit under the following Conditions:</span></p><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.25in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;" id="isPasted"><strong style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 16px; font-family: inherit; vertical-align: baseline; outline: 0px; text-decoration: underline;">Eligibility Requirements:</span></strong><br style="box-sizing: border-box;">You must be a resident of a state or U.S. Territory outside of California and be legally allowed to own, purchase, and possess a firearm capable of being concealed. Additionally, at the time of submission, you must be a member of one of the following organizations and provide a copy of your membership card:</p><ol style="box-sizing: border-box; margin: 1em 0px 1.4em 0.5in; padding: 0px 0px 0px 2em; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); line-height: 1.5; list-style-type: circle; font-size: 14.4px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">California Rifle &amp; Pistol Association, Incorporated</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Gun Owners of America, Inc.</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Gun Owners of California, Inc.</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">The Second Amendment Foundation&nbsp;</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Firearms Policy Coalition&nbsp;</li></ol><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.25in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;"><strong style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 16px; font-family: inherit; vertical-align: baseline; outline: 0px; text-decoration: underline;">Complete the Online Application:</span></strong><br style="box-sizing: border-box;">Submit the State Standard Application online at <a href="https://tuolumneca.permitium.com/ccw/start" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="PERMITIUM Opens in new window">PERMITIUM</a></p><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.5in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;">&nbsp;</p><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.25in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;"><strong style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 16px; font-family: inherit; vertical-align: baseline; outline: 0px; text-decoration: underline;">Required Documents for Submission:</span></strong><br style="box-sizing: border-box;">Along with your application, please provide the following documents:</p><ol style="box-sizing: border-box; margin: 1em 0px 1.4em 0.5in; padding: 0px 0px 0px 2em; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); line-height: 1.5; list-style-type: circle; font-size: 14.4px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">A valid state driver’s license or state-issued ID</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">A membership card for one of the approved organizations</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">A digital passport-style photo (see specific photo requirements below)</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">A signed affidavit confirming your intention to visit Tuolumne County within the next 12 months</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Proof of current address, <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 14.4px; font-family: inherit; vertical-align: baseline; outline: 0px; background: yellow;">only if different from the address on your driver’s license</span>(choose one):<ul style="box-sizing: border-box; margin: 1em 0px 1.4em; padding: 0px 0px 0px 2em; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); line-height: 1.5; border: 0px none; list-style-type: square;"><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">A current resident CCW from your state/jurisdiction</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Two (2) consecutive service provider statements dated within the last 90 days. Accepted service providers include:<ul style="box-sizing: border-box; margin: 1em 0px 1.4em; padding: 0px 0px 0px 2em; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); line-height: 1.5; border: 0px none; list-style-type: square;"><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Gas/Electric</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Water</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Garbage</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Home Internet</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Cable/Satellite</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Home Phone</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Credit Card</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Bank Account</li></ul></li></ul></li></ol><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 1.5in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;">&nbsp;</p><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.25in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;"><strong style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 16px; font-family: inherit; vertical-align: baseline; outline: 0px; text-decoration: underline;">Application Submission and Appointment Scheduling:</span></strong><br style="box-sizing: border-box;">After obtaining all necessary documents, complete the online application and schedule your appointment. Interviews are held virtually, and a link will be provided to you prior to your interview date. Ensure you are logged in on time - late arrivals may result in the interview being rescheduled at the investigator's discretion.</p><p style="box-sizing: border-box; margin: 0.2pt 0in 0.0001pt 0.5in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif;">&nbsp;</p><p style="box-sizing: border-box; margin: 0.2pt 0in 0in; border: 0px none; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 16px; font-family: Arial, sans-serif; text-indent: 0.25in;"><strong style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-size: 16px; font-family: inherit; vertical-align: baseline; outline: 0px; text-decoration: underline;">Virtual Interview Requirements</span>:</strong></p><ol style="box-sizing: border-box; margin: 1em 0px 1.4em 0.5in; padding: 0px 0px 0px 2em; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(4, 0, 0); line-height: 1.5; list-style-type: circle; font-size: 14.4px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Your camera must be on for the duration of the interview.</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Your face should be visible, with no masks or filters covering it.</li><li style="box-sizing: border-box; margin-bottom: 0.35em; border: 0px none; font-style: normal; font-weight: 400;">Distractions during the interview may result in a warning; repeated distractions may lead to rescheduling. &nbsp;</li></ol><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;text-align:center;line-height:115%;"><br></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">CCW Permit Process</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;">All CCW applications are submitted and processed through&nbsp;</span><span style="color:black;"><a href="https://tuolumneca.permitium.com/ccw/start" target="_blank" aria-describedby="audioeye_new_window_message" aria-label="PERMITIUM Opens in new window" rel="noopener"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#BF8F00;border:none windowtext 1.0pt;padding:0in;">PERMITIUM</span></strong></a></span><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">. The application process consists of a review of the application and a criminal background check of the applicant. For current application fees, please refer to the fee schedule listed on Permitium.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">When completing the application, please be prepared to provide the following:&nbsp;</span></p><ol style="list-style-type: decimal;margin-left: -0.25in;" role="presentation"><ol role="presentation"><ol><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">A valid California driver’s license, or state issued ID. Your home address must be current with the California DMV. It is not required that your actual driver’s license reflect your current address.&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Proof of residency documents showing your current address in Tuolumne County.&nbsp;</span><a href="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpermitium-downloads.s3.amazonaws.com%2Ftuolumne_AcceptedProofofResidence.pdf&amp;data=05%7C02%7CCAnderson%40co.tuolumne.ca.us%7Cece3ff20c8e04d54061f08dd0f15c071%7C37e2bf7f4bc440859e0aaeab83f13a1e%7C1%7C0%7C638683308277821310%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=CfHri8yxafTTN%2BJaoGSFrceK7PriryOZguJ4QHR3x2U%3D&amp;reserved=0" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="CLICK HERE Opens in new window" class="docaccess-activated" data-docaccess-url="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpermitium-downloads.s3.amazonaws.com%2Ftuolumne_AcceptedProofofResidence.pdf&amp;data=05%7C02%7CCAnderson%40co.tuolumne.ca.us%7Cece3ff20c8e04d54061f08dd0f15c071%7C37e2bf7f4bc440859e0aaeab83f13a1e%7C1%7C0%7C638683308277821310%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=CfHri8yxafTTN%2BJaoGSFrceK7PriryOZguJ4QHR3x2U%3D&amp;reserved=0" data-url-hash="48cefb16192994a5134cb4febb30e8a6d0cc28a3b479d3a91de3da5924f39c21" data-url-status="disabled"><strong><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;color:#BF8F00;">CLICK HERE</span></strong></a><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">&nbsp;for the list of accepted residency documents. Documents must be dated within the last 90 days. We <strong>DO NOT</strong> accept past due statements. We <strong>DO NOT</strong> accept any items other than those listed.&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Training certificate and qualification scores, if already completed. Applicants must qualify with each firearm that will be listed on a permit pursuant to Penal Code § 26155(a)(3). The Tuolumne County Sheriff’s Office allows up to three (3) firearms on a permit.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Initial applicants need to provide the names and contact information of at least three (3) persons willing to serve as references. One must be your spouse, cohabitant, fiancée, someone with whom you have or have had an engagement or dating relationship, or the mother or father of your child), if applicable. References must know you for at least a year.<span style="color:#212529;background:white;">&nbsp;</span></span></li></ol></ol></ol><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#212529;background:white;">These documents are required each time an initial or renewal application is submitted.&nbsp;</span><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Failure to submit the required documentation may result in delays in processing your application.&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">For additional information, questions, or concerns regarding the application process, you may contact the CCW Unit at 209-533-5833.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Training Requirement</span></strong></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Applicants are not required to pay for any training courses prior to the initial determination of whether the applicant is a disqualified person. However, a permit will not be issued until training certification has been received. Training courses must be provided by a training instructor approved by the Tuolumne County Sheriff’s Office <strong>(see bottom of the page</strong>).&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The course shall include live-fire shooting exercises on a firing range and shall include demonstration of safe handling of, and shooting proficiency with, each firearm the applicant is applying to be licensed to carry. The live-fire portion consists of firing each weapon a minimum of twelve (12) rounds and achieve a minimum passing score of 80% proficiency from a maximum shooting distance of ten (10) yards.&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Initial applicants must complete a course no less than sixteen (16) hours in length. Renewing applicants must complete a course no less than eight (8) hours in length.&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Training certificates are only valid for six (6) months. If the training certificate expires prior to approval, it will not be accepted, and you will need to retake the course and provide a valid training certificate.</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">If you are applying for a modification to your current CCW permit that includes a firearm change, you also need to submit a live fire qualification certificate prior to permit issuance.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Initial CCW application</span></strong></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Once you have successfully submitted your application, you will receive an email providing you with your order number. Please be sure to retain this order number and remember your password as you will need them to access your application later. All new applicants must call our office at 209-533-5833 to schedule an interview after submitting the application. Renewing applicants do not need to be interviewed. Interviews are conducted in person at the Tuolumne County Sheriff’s Office located at 28 Lower Sunset Drive, Sonora, CA 95370.&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">At the conclusion of the interview, you will be provided with live scan (fingerprinting) scheduling information. You will need to contact the Jamestown Community Service Unit to complete a live scan. This consists of a background check done by the DOJ and the FBI. This process can take a <strong>minimum</strong> of twenty (20) weeks. Upon receiving clearance from the DOJ and FBI, the Sheriff’s authorized designee will complete a final review of your application. If your application is approved, you will be notified by email via Permitium. Upon approval of your application, you will need to pay the remaining fee online through Permitium. After making the final payment, please wait 24 hours prior to picking up your new CCW permit.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Renewals</span></strong></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">If you are renewing a CCW permit, you may apply as early as 90 days prior to the expiration date listed on your current permit. If your permit expires prior to submitting your renewal application, you will not have to start the process over depending on the length of time since your permit has lapsed. However, you <strong>CANNOT</strong> carry until your renewal application has been approved and your permit issued.&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Applications are processed in the order they are received, however, they are approved approximately 1-2 weeks prior to the expiration date listed on your current permit. Once your application has been approved, you will be notified by email via Permitium. Please wait 24 hours prior to picking up your renewed CCW permit.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Modifications</span></strong></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">If you are modifying your CCW permit for an ADDRESS CHANGE within Tuolumne County, please provide (1) your CA driver’s license. While your CA driver’s license does not need to reflect your current address on it, you will still need to complete a change of address with the DMV. Please submit a copy of a receipt from DMV stating that a change of address has been submitted. (2) You will also need to provide proof of residence for your new address.</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">If you have moved out of Tuolumne County, you can call to notify us of your new address. Your permit will remain valid for 90 days, and you will have to apply in your new County of residence for a CCW permit.</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">If you are modifying your CCW permit to ADD/DELETE A FIREARM, please provide (1) your CA Driver’s License and (2) a live fire qualification certificate for any firearms being added to your permit. You will still need to list all the firearms you want listed on your CCW permit. Only the weapons listed will be included on your permit. Upon approval of your application, please wait 24 hours to pick up your modified CCW permit. At this time, you will need to turn in your old permit.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;text-align:center;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;">For status updates or to access your application, please see the&nbsp;</span><span style="color:black;"><a href="https://tuolumneca.permitium.com/order_tracker"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#BF8F00;border:none windowtext 1.0pt;padding:0in;">Order Tracker</span></strong></a></span><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">.</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;">If computer assistance is needed to submit an application, you can contact the Community Service Unit at 209-536-9828 or 209-768-0067. There will be a volunteer there to answer questions and to provide access to a computer and scanner.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;">For technical support regarding the use of Permitium, contact the Permitium Help Desk at 855-642-2453 or&nbsp;</span><span style="color:black;"><a href="mailto:help@permitium.com"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#BF8F00;">help@permitium.com</span></a></span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Restrictions</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The Sheriff may place special restrictions limiting time, place, manner, and circumstances under which any permit shall be valid. In general, these restrictions will prohibit the licensees from:</span></p><ol style="list-style-type: decimal;margin-left: -0.25in;" role="presentation"><ol role="presentation"><ol role="presentation"><ol><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Consuming any alcoholic beverage while armed.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Being in a place having a primary purpose of dispensing alcoholic beverages for onsite consumption.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Being under the influence of any alcoholic beverage, medication, or controlled substance.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Carrying a firearm not listed on the permit or a firearm for which they are not the recorded owner.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Falsely representing him/herself as a peace officer.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Unjustified or unreasonable displaying of a firearm.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Failing to carry the permit on their person.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Committing any crime.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Being under the influence of any medication or drug while armed.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Interfering with any law enforcement officer’s duties.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Refusing to display his/her permit or firearm for inspection upon demand of any peace officer.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Loading the permitted firearm with illegal ammunition.</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Carrying more than two firearms at one time.</span></li></ol></ol></ol></ol><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The Sheriff reserves the right to inspect any permit or licensed firearm at any time.&nbsp;</span></p><p style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; line-height: 115%; text-align: justify;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">The mechanical alteration of any previously approved firearm including, but not limited to adjusting the trigger pull, altering, or removing serialized parts, or mechanical modifications, shall void any permit and serve as grounds for revocation. The addition of tactical lights, laser sights, or grip modifications should not be considered mechanical alterations.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;text-align:center;line-height:115%;"><a href="/DocumentCenter/View/28537/CCW-Policy-218" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="Tuolumne County Sheriff’s Office Policy 218 Opens in new window" class="docaccess-activated" data-docaccess-url="https://www.tuolumnecounty.ca.gov/DocumentCenter/View/28537" data-url-hash="14f2814581ac8bea6bca90ac5541e6e37e24837023beac28e6754124a5a369fd" data-url-status="disabled"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:#BF8F00;">Tuolumne County Sheriff’s Office Policy 218</span></strong></a></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Approved CCW Instructors (Updated 4/22/2024)</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">NOTE:</span></strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;The Tuolumne County Sheriff’s Office has approved the instructors listed below but does not recommend one instructor over another. Fees and instruction may vary depending on the instructor you select. Each instructor shall provide the minimum instruction as required by the CA Penal Code and the Tuolumne County Sheriff’s Office.</span></p><p align="center" style="text-align: center; line-height: 140%;"><br></p><h1 class="headline" aria-level="2"><span style="white-space: pre; text-decoration: underline;">Approved CCW Instructors</span></h1><table style="width: 100%; margin-left: calc(0%);"><tbody><tr><td style="width: 21.204%;"><span style="font-size: 14px;"><strong><span style="text-decoration: underline;">Name</span></strong></span></td><td style="width: 13.171%;"><span style="font-size: 14px;"><strong><span style="text-decoration: underline;">Phone</span></strong></span></td><td style="width: 20.2419%;"><span style="font-size: 14px;"><strong><span style="text-decoration: underline;">Website</span></strong></span></td><td style="width: 9.3246%;"><strong><span style="text-decoration: underline;">Out of State approved</span></strong></td><td style="width: 35.4335%;"><span style="font-size: 14px;"><strong><span style="text-decoration: underline;">Email</span></strong></span></td></tr><tr><td style="width: 21.204%;">559 Concealed Carry</td><td style="width: 13.171%;">559-790-3071</td><td style="width: 20.2419%;"><br></td><td style="width: 9.3246%;">Y</td><td style="width: 35.4335%;"><a href="mailto:paco@559ccw.com" id="isPasted">paco@559ccw.com</a></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Accuracy Firearm Training</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;<span style="font-family: Arial, sans-serif;">916-316-6996</span></span></td><td style="width: 20.2419%;"><span style="font-size: 14px;"><a href="http://accuracyfirearm.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="accuracyfirearm.com&nbsp; Opens in new window">accuracyfirearm.com&nbsp;</a><br></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size:16px;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;" id="isPasted"><span style="font-size: 14px; font-family: Arial, sans-serif;"><span style="font-family: Arial, sans-serif;"><a href="mailto:Exglock@gmail.com">Exglock@gmail.com</a></span></span></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Alpha Point Firearms Training</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;209-660-9414 &nbsp;&nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://alphapointtraining.com" target="_blank" aria-label="alphapointtraining.com Opens in new window" aria-describedby="audioeye_new_window_message" rel="noopener">alphapointtraining.com</a> &nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="mailto:info@alphapointtraining.com">info@alphapointtraining.com</a></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Bill Tidwell</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-878-3056 &nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://Train2besafe.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="Train2besafe.com Opens in new window">Train2besafe.com</a>&nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;<a href="http://mailto:bill@train2besafe.com">bill@train2besafe.com</a> &nbsp;</span></td></tr><tr><td style="width: 21.204%;">California Online CCW</td><td style="width: 13.171%;">559-294-9400</td><td style="width: 20.2419%;"><a href="http://californiaonlineccw.com/nonresident" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="californiaonlineccw.com/nonresident Opens in new window">californiaonlineccw.com/nonresident</a></td><td style="width: 9.3246%;">Y</td><td style="width: 35.4335%;"><a href="//californiaonlineccw.com/nonresident">californiaonlineccw.com/nonresident</a></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Case Defensive Training Group&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-665-5541</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://casedefensivetraininggroup.com" target="_blank" aria-label="casedefensivetraininggroup.com Opens in new window" aria-describedby="audioeye_new_window_message" rel="noopener">casedefensivetraininggroup.com</a>&nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><br></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Confidence Firearms &amp; Weapons Training &nbsp; &nbsp;&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-768-1497 &nbsp;&nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px;"><br></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;<a href="mailto:conna586@icloud.com">conna586@icloud.com</a>&nbsp; &nbsp;&nbsp;</span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><span style="font-family: Arial, sans-serif;">Defensive TRIAD&nbsp;</span></span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><span style="font-family: Arial, sans-serif;">916-765-5661</span></span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><span style="font-family: Arial, sans-serif;">&nbsp;<a href="http://defensive triad.com" target="_blank" rel="noopener" aria-label="defensivetriad.com Opens in new window" aria-describedby="audioeye_new_window_message">defensive<span style="color: rgb(56, 56, 56); font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(250, 250, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;" id="isPasted">&nbsp;</span>triad.com</a>&nbsp; &nbsp;</span></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size:16px;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;" id="isPasted"><span style="font-size: 14px; font-family: Arial, sans-serif;"><span style="font-family: Arial, sans-serif;">&nbsp;<a href="mailto:info@defensivetriad.com">info@defensivetriad.com</a>&nbsp; &nbsp;</span></span></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Defensive Weapons School</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">925-549-0480 &nbsp; &nbsp;&nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://defensiveweaponsschool.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="defensiveweaponsschool.com Opens in new window">defensiveweaponsschool.com</a> &nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="mailto:defensive_weapons_school@yahoo.com">defensive_weapons_school@yahoo.com</a>&nbsp;</span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Dynamic CCW Academy&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-770-5550</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://calaverasccw.com" target="_blank" aria-label="calaverasccw.com Opens in new window" aria-describedby="audioeye_new_window_message" rel="noopener">calaverasccw.com</a>&nbsp; &nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><br></span></td></tr><tr><td style="width: 21.204%;">Grover Group</td><td style="width: 13.171%;">510-676-6076<br></td><td style="width: 20.2419%;">ggccw.biz<br></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><a href="mailto:anoop@grovergroup.biz" data-pasted="true">anoop@grovergroup.biz</a><br></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Hard Focus Firearms Training&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-564-0332 &nbsp; &nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://hardfocustraining.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="hardfocustraining.com Opens in new window">hardfocustraining.com</a> &nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="mailto:hardfocustraining@gmail.com">hardfocustraining@gmail.com</a>&nbsp;</span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Kiwi’s Custom Guns</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-863-2355 &nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://kiwiscustomguns.com" target="_blank" aria-label="kiwiscustomguns.com Opens in new window" aria-describedby="audioeye_new_window_message" rel="noopener">kiwiscustomguns.com</a>&nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><br></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Madison Society Foundation</span></td><td style="width: 13.171%;"><span style="font-size: 14px;"><br></span></td><td style="width: 20.2419%;"><span style="font-size: 14px;"><br></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;<a href="mailto:Registration@madisonsocietyfoundation.org">Registration@madisonsocietyfoundation.org</a>&nbsp;</span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">ROZO Tactical&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-425-0075</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://rozotactical.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="rozotactical.com Opens in new window">rozotactical.com</a></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="mailto:training@rozotactical.com">training@rozotactical.com</a></span><span style="font-size: 14px;"><br></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px;">Saber Tactics</span></td><td style="width: 13.171%;"><span style="font-size: 14px;">650-276-0009</span></td><td style="width: 20.2419%;"><span style="font-size: 14px;"><br></span></td><td style="width: 9.3246%;">Y</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><a href="mailto:training@sabertactics.com">training@sabertactics.com</a><br></span></td></tr><tr><td style="width: 21.204%;">Safe Insight</td><td style="width: 13.171%;">877-217-7233</td><td style="width: 20.2419%;"><a href="http://safeinsight.net/california-ccw" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="safeinsight.net/california-ccw Opens in new window">safeinsight.net/california-ccw</a></td><td style="width: 9.3246%;">Y</td><td style="width: 35.4335%;"><a href="mailto:Info@SafeInsight.net" id="isPasted">Info@SafeInsight.net</a></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Spartan Defense &nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-202-8283 &nbsp;&nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://Trainwithspartan.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="Trainwithspartan.com Opens in new window">Trainwithspartan.com</a>&nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><br></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Stage Stop Gun Shop&nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-358-4867</span></td><td style="width: 20.2419%;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;" id="isPasted"><a href="http://Stagestopgunshop.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="Stagestopgunshop.com Opens in new window">Stagestopgunshop.com</a> &nbsp;</span></td><td style="width: 9.3246%;">Y</td><td style="width: 35.4335%;"><p><a href="mailto:Range@SSGS.US">Range@SSGS.US</a>&nbsp;</p></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Valley Defense Consulting &nbsp;</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-552-5728 &nbsp;</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://valleydefense.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="valleydefense.com Opens in new window">valleydefense.com</a>&nbsp; &nbsp;</span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">&nbsp;<a href="http://mailto:training@valleydefense.com">training@valleydefense.com</a></span></td></tr><tr><td style="width: 21.204%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">Weapons Training School</span></td><td style="width: 13.171%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted">209-532-6677</span></td><td style="width: 20.2419%;"><span style="font-size: 14px; line-height: 150%; font-family: Arial, sans-serif;" id="isPasted"><a href="http://Weaponstrainingschool.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message" aria-label="Weaponstrainingschool.com Opens in new window">Weaponstrainingschool.com</a></span></td><td style="width: 9.3246%;">N</td><td style="width: 35.4335%;"><span style="font-size: 14px;"><br></span></td></tr></tbody></table><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p><span style="font-size:16px;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;I</span>f you interested in becoming a Training Provider for the Tuolumne County Sheriff's Office:</p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;" id="isPasted"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Training Provider Approval Process</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">Training providers interested in becoming an approved instructor for Tuolumne County CCW applicants must submit the following:</span></p><ul style="list-style-type: disc;margin-left: -0.25in;"><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">A copy of a valid form of photographic identification</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">CA DOJ CCW Instructor Certificate unless exempt per SB 2&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Current Certificate of Eligibility</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Acceptable Firearms Instructor’s Certification for each individual firearms instructor, such as a CA DOJ Firearm Safety Instructor Certificate, certifications from the NRA, CA P.O.S.T., BSIS, and/or USCCA, and a copy of any other applicable licenses and certifications held. (Must be current. Expired certifications will not be accepted)</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Detailed course syllabus for both Initial and Renewing applicants&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Copy of written test provided after training</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Scoring guidelines&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Sample certificate(s) of 16-hour, 8-hour, and live-fire course completion&nbsp;</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Name and complete address(es) of range where trainings will be conducted</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">A resume for each instructor, and any individuals working with the instructors, that include prior experience, list of certifications, and any additional, relevant information</span></li><li><span style="line-height:115%;font-family:&quot;Arial&quot;,sans-serif;font-size:16px;">Contact information for CCW applicants to reach you (Website, phone number, email address, etc.)</span></li></ul><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">Submittals for consideration should be sent to the following address:</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">Tuolumne County Sheriff’s Office</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">Attn: CCW Coordinator</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">28 N. Lower Sunset Drive</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><strong><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">Sonora, CA 95370</span></strong></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;">&nbsp;</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;line-height:115%;background:white;"><span style="font-size:16px;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0in;">All submissions will be reviewed by the Sheriff’s designee. If approved, firearms instructors will be notified in writing and shall be added to the list of approved instructors, maintained by the CCW Unit, to be placed on our website.</span></p><p><br></p>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '24d3aed8-ce75-4a90-881a-597146406c08'));
+	});
+</script>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+		</div>
+
+	</div>
+
+	
+	<div class="newCP">
+
+	</div>
+</div>
+</div><aside data-cprole="contentContainer" id="featureColumn" class="secondaryContent" style="display: none;" role="presentation">	<div id="cc1f9ceab2-1975-4d57-a766-80c79016f5ae" data-containerid="1f9ceab2-1975-4d57-a766-80c79016f5ae" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div><div data-cprole="structuralContainer" id="siteSidebarTS" class="siteSidebar">
+<aside data-cprole="contentContainer" id="sidebarContainer1TS">	<div id="ccc4521734-0151-4913-90cd-3e18e5bcdced" data-containerid="c4521734-0151-4913-90cd-3e18e5bcdced" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><nav data-cprole="nav" id="secondaryNav" class="siteNav secondaryNav" aria-label="Secondary">
+
+
+
+
+
+	<ol id="secondaryMenusecondaryNav" data-parent="1562" class="rootNavMenu accordionNav">
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem960" data-pageid="960">
+		<div class="accordionNavItem">
+			<a href="/960/ALARMS" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">ALARMS</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem342" data-pageid="342">
+		<div class="accordionNavItem">
+			<a href="/342/CCW" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">CCW</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1798" data-pageid="1798">
+		<div class="accordionNavItem">
+			<a href="/1798/Online-Crime-Reporting" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Online Crime Reporting</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1945" data-pageid="1945">
+		<div class="accordionNavItem">
+			<a href="/1945/Community-reference-and-accountability" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Community reference and accountability</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem344" data-pageid="344">
+		<div class="accordionNavItem">
+			<a href="/344/CivilCoronerRecords-Section" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Civil/Coroner/Records Section</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem924" data-pageid="924">
+		<div class="accordionNavItem">
+			<a href="/924/Prescription-Drug-Drop-Boxes" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Prescription Drug Drop Boxes</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem357" data-pageid="357">
+		<div class="accordionNavItem">
+			<a href="/357/Records-Section" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Records Section</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem751" data-pageid="751">
+		<div class="accordionNavItem">
+			<a href="/751/Reports-Documents-Forms" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Reports, Documents &amp; Forms</a>
+		</div>
+			</li>
+
+	</ol>
+
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			//setup menu manager properties for secondary menu
+			menuManager.isSideMenuEditable = false;
+			menuManager.sideMenuMaxSubMenuLevels = 4;
+			menuManager.sideMenuHasCustomLinks = false;
+		});
+	</script>
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			$('*[id^="SideItem"]').each(function () {
+				var ids = $('[id="' + this.id + '"]');
+				if (ids.length > 1)
+					$.each(ids, function (index, value) {
+						value.id = value.id + '_' + index;
+					});
+			});
+
+			$('.hasAccordionChildren .openAccordionNav').click(function (e) {
+				e.preventDefault();
+				showHideAccordionMenuForSecondaryNav($(this));
+			});
+
+			$("#secondaryNav .grippy").each(function () {
+				menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+			});
+
+			$("#secondaryNav li").each(function () {
+				menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+			});
+		});
+	</script>
+
+
+
+</nav><aside data-cprole="contentContainer" id="sidebarContainer2TS">	<div id="ccad872caa-d205-4c22-9de9-83a11a1294f8" data-containerid="ad872caa-d205-4c22-9de9-83a11a1294f8" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div>
+</div></div>
+</div><!-- GBs --><div data-cprole="structuralContainer" id="gbsContainerTS">
+<div class="siteWrap"><div data-cprole="contentContainer" id="gbsTS">	<div id="cc6f261750-37ca-4010-a2ea-da9ba8be3ae0" data-containerid="6f261750-37ca-4010-a2ea-da9ba8be3ae0" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="50">
+				                
+
+
+
+	</div>
+</div></div>
+</div><!-- Footer --><footer data-cprole="structuralContainer" id="footerContainerTS">
+<div class="siteWrap2"><div data-cprole="contentContainer" id="footerTS">	<div id="cce33ded73-1101-4268-8403-9e101d3adc99" data-containerid="e33ded73-1101-4268-8403-9e101d3adc99" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="50">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col6 first" style="" data-widgetcontainerid="6b5d42c1-d8a7-42fd-a426-09e6b9fdab3d">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col6 first last id239d8a71-ca49-44c3-b41c-a5eb61854acb" style="" data-widgetcontainerid="239d8a71-ca49-44c3-b41c-a5eb61854acb">
+	
+    <div data-widget-id="5721382a-298c-4ba1-9c54-175f409053d2" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv5721382a-298c-4ba1-9c54-175f409053d2" class="widget widgetInfoAdvanced skin13 widgetOptionSet5 narrow" data-modulewidgettype="infoAdv" data-elementqueryclasses="{&quot;wide-narrow&quot;:&quot;min-width:25em&quot;}" data-elementquerymatch="matchMultiColumn" data-elementqueryunmatch="unmatchMultiColumn">
+			<header class="widgetHeader" id="header5721382a-298c-4ba1-9c54-175f409053d2" role="presentation">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row narrow">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList" role="presentation">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><img src="/ImageRepository/Document?documentId=20094" class="fr-dib" alt="Tuolumne County Seal"></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv5721382a-298c-4ba1-9c54-175f409053d2 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="60fa3896-00ef-4f91-b0c9-55221938eb48">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col1 first last id82c95bcd-9d96-4bec-91ad-8f891433dc83" style="" data-widgetcontainerid="82c95bcd-9d96-4bec-91ad-8f891433dc83">
+	
+
+<div class="widget widgetSpacer" id="42ff28b2-b06c-40bf-9ba9-23fb3f08b393"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="2d0c66b7-2970-4be8-8492-02205b0e106b">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col5 first last id42f05043-122d-41d5-9c89-4fdb039e42e2" style="" data-widgetcontainerid="42f05043-122d-41d5-9c89-4fdb039e42e2">
+	
+    <div data-widget-id="104812b1-2a91-4981-84e5-e711355e773b" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv104812b1-2a91-4981-84e5-e711355e773b" class="widget widgetInfoAdvanced skin54 widgetOptionSet5 narrow" data-modulewidgettype="infoAdv" data-elementqueryclasses="{&quot;wide-narrow&quot;:&quot;min-width:25em&quot;}" data-elementquerymatch="matchMultiColumn" data-elementqueryunmatch="unmatchMultiColumn" aria-labelledby="header104812b1-2a91-4981-84e5-e711355e773b">
+			<header class="widgetHeader" id="header104812b1-2a91-4981-84e5-e711355e773b" role="presentation">
+		<div class="">
+					<h3 role="heading" aria-level="2">Contact Us</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row narrow">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList" role="presentation">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><strong>Sheriff's Office Administration</strong><br>28 N Lower Sunset Drive<br>Sonora, CA 95370</p><p>Phone: <a href="tel:209-533-5855">209-533-5855</a><br>Fax: 209-533-5831</p><p><a href="/Directory.aspx?DID=35">Staff Directory</a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv104812b1-2a91-4981-84e5-e711355e773b .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="31388ab9-02f3-4f6b-8152-09bad9b1f486">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col1 first last id41509668-7591-4755-8e4a-b288401ebc10" style="" data-widgetcontainerid="41509668-7591-4755-8e4a-b288401ebc10">
+	
+
+<div class="widget widgetSpacer" id="9db55a7d-9311-4450-bb55-6d9f9e06029f"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="f6733155-12d8-41b3-98f0-e982915b1fbf">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col5 first last ide32348db-9cbe-4b7e-ba6d-96b0f20c1bc0" style="" data-widgetcontainerid="e32348db-9cbe-4b7e-ba6d-96b0f20c1bc0">
+	
+	<div data-widget-id="42fd1354-0530-49a5-a220-4ed0635de64f" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklink42fd1354-0530-49a5-a220-4ed0635de64f" class="widget widgetQuickLinks skin54 widgetOptionSet19 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses="{&quot;wide-narrow&quot;:&quot;min-width:25em&quot;}" data-elementquerymatch="matchMultiColumn" data-elementqueryunmatch="unmatchMultiColumn" aria-labelledby="quickLinksHeader42fd1354-0530-49a5-a220-4ed0635de64f">
+			<header class="widgetHeader" id="quickLinksHeader42fd1354-0530-49a5-a220-4ed0635de64f" role="presentation">
+		<div class="">
+					<h3 role="heading" aria-level="2"><a style="" href="/QuickLinks.aspx?CID=105">Quick Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://tcso.citizenrims.com/" target="_blank" aria-label="Crime Graphics Opens in new window" rel="noopener">Crime Graphics</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink docaccess-activated" href="/DocumentCenter/View/28109/2024-9-Tuolumne-County-SO-Policy-Manual" target="_blank" aria-label="TCSO Policy Manual Opens in new window" rel="noopener" data-docaccess-url="https://www.tuolumnecounty.ca.gov/DocumentCenter/View/28109" data-url-hash="cd0b71f0fc5ea9b3550dff5fdfa7e53f349443dd0229ee3640de0c385c2400d3" data-url-status="disabled">TCSO Policy Manual</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink docaccess-activated" href="/DocumentCenter/View/13722/2023-Custody-Policy" target="_self" data-docaccess-url="https://www.tuolumnecounty.ca.gov/DocumentCenter/View/13722" data-url-hash="f00bbac280b3c3d18cedbe44422d4810abb3012aca19a00b782a2ded9df4dfd6" data-url-status="disabled">2023 Custody Policy</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="http://www.meganslaw.ca.gov/" target="_blank" aria-label="Megan's Law Opens in new window" rel="noopener">Megan's Law</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink docaccess-activated" href="/DocumentCenter/View/29288/2024-12-Org-chart" target="_blank" aria-label="Organizational Chart Opens in new window" rel="noopener" data-docaccess-url="https://www.tuolumnecounty.ca.gov/DocumentCenter/View/29288" data-url-hash="7b39606f05b1e30a2c5df08bb43819be07511c70f365783a3164d54a332bb10e" data-url-status="disabled">Organizational Chart</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.facebook.com/tuolumnecountysheriff" target="_blank" aria-label="Facebook Opens in new window" rel="noopener">Facebook</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="cf069c44-8132-4cd2-a494-876924bfeb50">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col1 first last idf1ed356d-3ea8-49ae-81da-95d1a9573d97" style="" data-widgetcontainerid="f1ed356d-3ea8-49ae-81da-95d1a9573d97">
+	
+
+<div class="widget widgetSpacer" id="1a109f9f-b8aa-41c8-b7a3-1a43cd1a3f7d"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5 last" style="" data-widgetcontainerid="30b8a3af-a782-4efc-ab09-ae6f1865db02">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col5 first last id48c72ca9-cd4d-493e-94eb-e6115eca55ba" style="" data-widgetcontainerid="48c72ca9-cd4d-493e-94eb-e6115eca55ba">
+	
+	<div data-widget-id="042408fc-d1a1-45ba-b184-aa8beb9f41c8" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklink042408fc-d1a1-45ba-b184-aa8beb9f41c8" class="widget widgetQuickLinks skin54 widgetOptionSet19 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses="{&quot;wide-narrow&quot;:&quot;min-width:25em&quot;}" data-elementquerymatch="matchMultiColumn" data-elementqueryunmatch="unmatchMultiColumn" aria-labelledby="quickLinksHeader042408fc-d1a1-45ba-b184-aa8beb9f41c8">
+			<header class="widgetHeader" id="quickLinksHeader042408fc-d1a1-45ba-b184-aa8beb9f41c8" role="presentation">
+		<div class="">
+					<h3 role="heading" aria-level="2"><a style="" href="/QuickLinks.aspx?CID=285">Site Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/" target="_self">Home</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/sitemap" target="_self">Site Map</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/directory" target="_self">Contact Us</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/accessibility" target="_self">Accessibility</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/site/copyright" target="_self">Copyright Notices</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</footer><!-- Powered By --><div data-cprole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap2"><div data-cprole="contentContainer" id="poweredByTS">	<div id="cc852ec5c4-c663-47ea-9c2a-4eabeeb0b3a0" data-containerid="852ec5c4-c663-47ea-9c2a-4eabeeb0b3a0" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="363a80ca-99ca-48eb-9d46-20a30cf70b60">
+				
+	<div class="row nest first last wide">
+
+	
+	<div class="inner col col24 first last idd641ac8e-dfea-451c-8603-8f6827b372f3" style="" data-widgetcontainerid="d641ac8e-dfea-451c-8603-8f6827b372f3">
+	
+ 
+	<div data-widget-id="d3452517-a7d2-4755-8a42-805fcf47eb79" data-modulename="customHtml" id="widgetCustomHtmld3452517-a7d2-4755-8a42-805fcf47eb79" class="widget widgetCustomHtml skin13 narrow">
+	<div class="widgetBody pageStyles" id="widgetBodyd3452517-a7d2-4755-8a42-805fcf47eb79">
+		<div id="customHtmld3452517-a7d2-4755-8a42-805fcf47eb79"><div><style>
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="widgetItem cpBylineTS">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="cpBylineIconTS">
+    <path class="c" d="M73.4,23.2h-19v16.7h19c2.8,0,5,2.2,5,5c0,2.8-2.2,5-5,5h-19v28.4h5.5l11.3-11.7h2.2c11.9,0,21.6-9.7,21.6-21.6C95,33,85.3,23.2,73.4,23.2"></path>
+    <path class="p" d="M45.8,66.5H26.6C14.7,66.5,5,56.8,5,44.9C5,33,14.7,23.2,26.6,23.2h19.1v16.7H26.6c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5h19.1V66.5z"></path>
+  </svg>
+  <span class="cpBylineTextTS">Government Websites by <a href="https://connect.civicplus.com/referral">CivicPlus®</a></span>
+</div>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+<link href="/745732998.css" rel="stylesheet" type="text/css">
+
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<h2 class="cp-Splash-title" id="cp-Splash-title">Loading</h2>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewBox="0 0 25 25">
+					<polygon style="fill:currentcolor" points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '342',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    <script src="/-978663714.js" type="text/javascript"></script>
+    <!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+<script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "f499c928fea78dbe7db42d77961c0aea"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;" role="presentation" aria-hidden="true" tabindex="-1">
+
+		<symbol id="iconArrow--left" viewBox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewBox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Libre+Franklin:500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|Montserrat:200,500,600,700,regular|');</script>
+    
+
+    
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" role="presentation" aria-hidden="true" tabindex="-1">
+                <symbol id="iconSlideshowArrowLeft" viewBox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewBox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+
+    <div id="root-picker-outlet"></div>
+
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;" role="presentation"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><aside role="presentation" data-cprole="contentContainer" id="mainNavMegaMenu1564" class="contentTop mainNavMegaMenu megaMenuContainer pageID_1564 moved megaMenu" data-orientation="horizontal" style="display: none; position: absolute; z-index: 100; left: 15.1875px; width: 1249.62px; top: 342.531px;">	<div id="ccc3662075-47c2-46f8-9a91-ac464ff31881" data-containerid="c3662075-47c2-46f8-9a91-ac464ff31881" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="presentation" data-cprole="contentContainer" id="mainNavMegaMenu1562" class="contentTop mainNavMegaMenu megaMenuContainer pageID_1562 moved megaMenu" data-orientation="horizontal" style="display: none; position: absolute; z-index: 100; left: 15.1875px; width: 1249.62px; top: 342.531px;">	<div id="cc599cb2d4-cb12-4295-b214-dd00c980e4f8" data-containerid="599cb2d4-cb12-4295-b214-dd00c980e4f8" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="presentation" data-cprole="contentContainer" id="mainNavMegaMenu1563" class="contentTop mainNavMegaMenu megaMenuContainer pageID_1563 moved megaMenu" data-orientation="horizontal" style="display: none; position: absolute; z-index: 100; left: 15.1875px; width: 1249.62px; top: 342.531px;">	<div id="cc5787deac-44d6-45ce-b2f0-dd8a1ef7e50a" data-containerid="5787deac-44d6-45ce-b2f0-dd8a1ef7e50a" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><div id="bannerSlideshowControls_banner1" class="bannerSlideshowControlsNew none " style="display:none">
+			<a id="arrowPrev_banner1" tabindex="0" class="arrowNew prev" aria-label="Banner Arrow Previous"><svg style=" " class="" role="presentation" aria-hidden="true" tabindex="-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowLeft"></use></svg></a>
+			<a id="arrowNext_banner1" tabindex="0" class="arrowNew next" aria-label="Banner Arrow Next"><svg style=" " class="" role="presentation" aria-hidden="true" tabindex="-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowRight"></use></svg></a>
+		</div><script src="https://wsmcdn.audioeye.com/aem.js" type="text/javascript" async=""></script><script src="https://wsv3cdn.audioeye.com/bootstrap.js?h=f499c928fea78dbe7db42d77961c0aea" type="text/javascript" async=""></script><script async="" crossorigin="anonymous" src="https://wsv3cdn.audioeye.com/v2/scripts/loader.js?h=f499c928fea78dbe7db42d77961c0aea&amp;lang=en&amp;cb=2026-04-08"></script><script type="text/javascript" src="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/startup.bundle.js"></script><div id="ae_app" data-nosnippet="">
+    
+        <!--
+        Layout, Style or Voice Helpers
+    -->
+    <div id="ae_helpers" class="ae-module" style="display: none;">
+
+    
+<script type="text/javascript">
+AudioEye.layoutHelpers.push(function(ele){
+
+// Tabset function setup - Active Class is the class the li gets when the element is active
+// Function includes tabsetup, tab labels and keylooping
+function tabSet(listParent, listItem, listAnchor, activeClass, tabPanels){
+  // Setting roles and initial values
+  $ae(listParent).each(function(){
+    if ($ae(this).find(listItem).length > 1) {
+      if($ae(this).css('display') !== 'none'){
+        $ae(this).attr({'role':'tablist'});
+      }
+
+      $ae(this).find(listItem).attr({'role':'presentation'});
+      $ae(this).find(listAnchor).attr({'aria-selected':'false', 'role':'tab', 'tabindex':'-1'});
+
+      $ae(this).find(listItem + '.' + activeClass + ' a').attr({'aria-selected':'true', 'tabindex':'0'});
+      $ae(this).find(tabPanels).each(function(){
+        if($ae(this).parent().find(listParent).css('display') !== 'none'){
+          $ae(this).attr({'role':'tabpanel'});
+        }
+      });
+    }
+  });
+
+
+  // Encapsulate events - Key Navigation for tabsets without tabindex
+  ele.outerFind(listParent).each(function(){
+    if ($ae(this).find(listItem).length > 1) {
+      // Change active tab onclick event
+      $ae(this).find('a').click(function(){
+        $ae(listParent).find('a').attr({'aria-selected':'false', 'tabindex':'-1'});	
+        $ae(listParent).find('li.active a').attr({'aria-selected':'true', 'tabindex':'0'});	
+      });
+
+
+      // tabset keylooping
+      $ae(this).find('a').on('keydown', function(e){
+        if(e.keyCode === 13 || e.keyCode === 32){
+          e.preventDefault();
+          this.click();
+        }
+        else if(e.keyCode === 37 && ($ae(this)[0] === $ae(this).closest('ol').find('a').first()[0])){
+          AudioEye.focusElement($ae(this).closest('ol').find('a').eq(-1));
+        }
+        else if( e.keyCode === 39 && ($ae(this)[0] === $ae(this).closest('ol').find('a').last()[0])){
+          AudioEye.focusElement($ae(this).closest('ol').find('a').first());
+        }
+        else if(e.keyCode === 37 ){
+          AudioEye.focusElement($ae(this).closest('li').prev().find('a'));
+        }
+        else if(e.keyCode === 39 ){
+          AudioEye.focusElement($ae(this).closest('li').next().find('a'));
+        }
+      });
+    }
+
+  });	// Close encapsulated actions
+}
+// tabset function call
+tabSet('ol.tabbedWidget.cpTabs','ol.tabbedWidget.cpTabs li','ol.tabbedWidget.cpTabs li > a','active','.cpTabPanels');
+/* end */
+
+
+/* Start new tabset */
+// Facilites Map & Listing Tabset
+function  facilitiesTabSet(listParent, listItem, listAnchor, activeClass, tabPanels){
+
+  // Setting roles and initial values
+  $ae(listParent).attr({'role':'tablist'});
+  $ae(listItem).attr({'role':'presentation'});
+  $ae(listAnchor).attr({'aria-selected':'false', 'role':'tab', 'tabindex':'-1'});
+
+  $ae(listItem + '.' + activeClass + ' a').attr({'aria-selected':'true', 'tabindex':'0'});
+  $ae(tabPanels).attr({'role':'tabpanel'});
+
+  $ae(listAnchor).click(function(){
+    $ae(listAnchor).attr({'aria-selected':'false', 'tabindex':'-1'});
+    $ae(this).attr({'aria-selected':'true', 'tabindex':'0'});
+  });
+
+  ele.outerFind('.searchResults > ol.tabs').each(function(){
+
+    $ae(this).find('a').on('keydown', function(e){
+      if(e.keyCode === 13 || e.keyCode === 32){
+        e.preventDefault();
+        this.click();
+      }
+      else if((e.keyCode === 37 || e.keyCode === 38) && ($ae(this)[0] === $ae(this).closest('ol').find('a').first()[0])){
+        AudioEye.focusElement($ae(this).closest('ol').find('a').eq(-1));
+      }
+      else if((e.keyCode === 39 || e.keyCode === 40) && ($ae(this)[0] === $ae(this).closest('ol').find('a').last()[0])){
+        AudioEye.focusElement($ae(this).closest('ol').find('a').first());
+      }
+      else if(e.keyCode === 37 || e.keyCode === 38){
+        AudioEye.focusElement($ae(this).closest('li').prev().find('a'));
+      }
+      else if(e.keyCode === 39 || e.keyCode === 40){
+        AudioEye.focusElement($ae(this).closest('li').next().find('a'));
+      }
+    });
+
+  }); 
+
+}
+
+facilitiesTabSet('.searchResults > ol.tabs','.searchResults > ol.tabs > li','.searchResults > ol.tabs > li > a','active','.searchResults > div');
+/* -END- */
+
+/* Start new tabset */
+// Facilitites Sidebar Tabset
+function sideBarTabset(listParent, listItem, listAnchor, activeClass, tabPanels){
+
+  // Setting roles and initial values
+  $ae(listParent).attr({'role':'tablist'});
+  $ae(listItem).attr({'role':'presentation'});
+  $ae(listAnchor).attr({'aria-selected':'false', 'role':'tab', 'tabindex':'-1'});
+
+  $ae(listItem + '.' + activeClass + ' a').attr({'aria-selected':'true', 'tabindex':'0'});
+  //$ae(tabPanels).attr({'role':'tabpanel'});
+
+  $ae(listAnchor).click(function(){
+    $ae(listAnchor).attr({'aria-selected':'false', 'tabindex':'-1'});
+    $ae(this).attr({'aria-selected':'true', 'tabindex':'0'});
+  });
+
+  ele.outerFind('ul.tabs.searchCriteria').each(function(){
+
+    $ae(this).find('a').on('keydown', function(e){
+      if(e.keyCode === 13 || e.keyCode === 32){
+        e.preventDefault();
+        this.click();
+      }
+      else if((e.keyCode === 37 || e.keyCode === 38) && ($ae(this)[0] === $ae(this).closest('ul').find('a').first()[0])){
+        AudioEye.focusElement($ae(this).closest('ul').find('a').eq(-1));
+      }
+      else if((e.keyCode === 39 || e.keyCode === 40) && ($ae(this)[0] === $ae(this).closest('ul').find('a').last()[0])){
+        AudioEye.focusElement($ae(this).closest('ul').find('a').first());
+      }
+      else if(e.keyCode === 37 || e.keyCode === 38){
+        AudioEye.focusElement($ae(this).closest('li').prev().find('a'));
+      }
+      else if(e.keyCode === 39 || e.keyCode === 40){
+        AudioEye.focusElement($ae(this).closest('li').next().find('a'));
+      }
+    });
+
+  }); 
+
+}
+
+sideBarTabset('ul.tabs.searchCriteria','ul.tabs.searchCriteria > li','ul.tabs.searchCriteria > li > a','active','ul.tabs.searchCriteria + div.sidebar > div');
+/* End */
+
+/* Start new tabset */
+function calendarTabset(listParent, listItem, listAnchor, activeClass, tabPanels){
+
+  // Setting roles and initial values
+  $ae(listParent).attr({'role':'tablist'});
+  $ae(listItem).attr({'role':'presentation'});
+  $ae(listAnchor).attr({'aria-selected':'false', 'role':'tab', 'tabindex':'-1'});
+
+  $ae(listItem + '.' + activeClass + ' a').attr({'aria-selected':'true', 'tabindex':'0'});
+  $ae(tabPanels).attr({'role':'tabpanel'});
+
+  $ae(listAnchor).click(function(){
+    $ae(listAnchor).attr({'aria-selected':'false', 'tabindex':'-1'});
+    $ae(this).attr({'aria-selected':'true', 'tabindex':'0'});
+  });
+
+  $ae('.header > #subheader ul.tabs').each(function(){
+
+    $ae(this).find('a').on('keydown', function(e){
+      if(e.keyCode === 13 || e.keyCode === 32){
+        e.preventDefault();
+        this.click();
+      }
+      else if((e.keyCode === 37 || e.keyCode === 38)  && ($ae(this)[0] === $ae(this).closest('ul').find('a').first()[0])){
+        AudioEye.focusElement($ae(this).closest('ul').find('a').eq(-1));
+      }
+      else if((e.keyCode === 39 || e.keyCode === 40) && ($ae(this)[0] === $ae(this).closest('ul').find('a').last()[0])){
+        AudioEye.focusElement($ae(this).closest('ul').find('a').first());
+      }
+      else if(e.keyCode === 37 || e.keyCode === 38){
+        AudioEye.focusElement($ae(this).closest('li').prev().find('a'));
+      }
+      else if(e.keyCode === 39 || e.keyCode === 40) {
+        AudioEye.focusElement($ae(this).closest('li').next().find('a'));
+      }
+    });
+
+  }); 
+
+}
+
+calendarTabset('.header > #subheader ul.tabs','.header > #subheader ul.tabs > li','.header > #subheader ul.tabs > li > a','active','.header > .list');
+/* end */
+
+// Tabset for Agenda Center Years
+// AE -  Agenda Center Tabset [AEI-40486]
+ele.outerFind('ul.years').each(function(){
+
+  tabset($ae(this), $ae(this).find('li'), $ae(this).find('a[id^="a"]'),'current', $ae(this).parent().find('table'));
+
+  function tabset(tablist, li, tabs, activeClass, tabPanel){
+    tablist.attr('role','tablist');
+    li.attr('role', 'presentation');
+    tabs.attr({'role': 'tab', 'tabindex':'-1', 'aria-selected':'false'});
+    $ae(li.selector +'.' + activeClass +' > '+ tabs.selector).attr({'aria-selected':'true', 'tabindex':'0'});
+    tabPanel.attr('role', 'tabpanel');
+
+    // individual tabs TODO - Update so it is dynamic
+    var tab = tablist.find('>'+li.selector+'>a');
+
+    tab.on('keydown', function(e){
+      if(e.keyCode === 13 || e.keyCode === 32){
+        e.preventDefault();
+        this.click();
+      }
+    }).click(function(){
+      $ae('body').data({'ae-year-tab': '#' + $ae(this).attr('id')});
+      setTimeout(function(){
+        AudioEye.focusElement($ae('body').data('ae-year-tab'));
+        $ae($ae('body').data('ae-year-tab')).attr('tabindex','0');
+      }, 1000);
+    });
+  }
+
+});
+
+}); // layout helpers push close brackets
+</script>
+
+    </div>
+    
+
+        <!--
+        Compliance
+    -->
+    <div id="ae_compliance" class="ae-module" style="display: none;">
+
+        <!-- For autoSmartRem addNewWindowWarnings div is referenced in an aria-describedby -->
+        <div id="audioeye_new_window_message" style="display:none">Opens in new window</div>
+        <div id="audioeye_pdf_message" style="display:none">PDF Download</div>
+        <div id="audioeye_word_message" style="display:none">Word Download</div>
+        <div id="audioeye_excel_message" style="display:none">Excel Download</div>
+        <div id="audioeye_powerpoint_message" style="display:none">PowerPoint Download</div>
+        <div id="audioeye_document_message" style="display:none">Document Download</div>
+
+                    </div>
+    
+    <!--
+        Versioning Control Panel if versioning = true !
+    -->
+        
+    <!--
+        Launcher
+    -->
+    <aside id="ae_launcher" style="display: none; bottom: 24px; inset-inline-end: 24px;" class="ae-module aetipsytip ae-active ae-cta-position-preset-right-lower" aria-label="Accessibility options" dir="ltr">
+  <button aria-label="Explore your accessibility options">
+    <div style="display: none" class="ae-left">
+      <span>Explore your accessibility options</span>
+    </div>
+
+    <div class="ae-right">
+      <span class="icomoon-wrapper">
+        <div>
+          <span class="icomoon-cta ae-icon-launcher-universalaccess ae-initial-cta">
+            <span class="icomoon-cta path1 a11y-icon-figure-and-border"></span>
+            <span class="icomoon-cta path2 a11y-icon-background" style="color: rgb(18, 117, 179);"></span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </button>
+</aside>
+
+    <!-- Toolbar -->
+
+    <span id="ae_placeholder_toolbar" style="display: none;" aria-hidden="true"></span>
+
+    <!--
+        Site Menu
+    -->
+    <span id="ae_placeholder_site-menu" style="display: none;" aria-hidden="true"></span>
+
+    
+    <!--
+        Generic Aria Live message container
+    -->
+    <div class="ae-blurb-noaudio" id="ae_enabled_messages" aria-relevant="additions" aria-live="assertive"></div>
+
+    
+    <!-- Symbol definitions -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>close carousel</title>
+        <defs>
+            <symbol id="icon-close-carousel" viewBox="0 0 32 32">
+                <path fill="#ffffff" style="fill: var(--color1, #ffffff)" d="M28.992 0l-12.992 12.992-12.992-12.992-3.008 3.008 12.992 12.992-12.992 12.992 3.008 3.008 12.992-12.992 12.992 12.992 3.008-3.008-12.992-12.992 12.992-12.992-3.008-3.008z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+</div><!-- end #ae_app --><style> body[data-audioeye-carousel-modal-active] .pageContent .col, body[data-audioeye-carousel-modal-active] .pageContent .row, body[data-audioeye-carousel-modal-active] .widget, body[data-audioeye-carousel-modal-active] [data-cprole$=Container], body[data-audioeye-carousel-modal-active] [data-cprole=banner], body[data-audioeye-carousel-modal-active] [data-cprole=nav] { z-index: unset !important; }</style><div id="docbox-overlay" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 2147483647; display: none; justify-content: center; align-items: end;"><div id="docbox-container" style="width: 100%; height: calc(100% - 40px); background-color: transparent; position: relative; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;"><button id="docbox-close" aria-label="Close document" style="position: fixed; top: 5px; right: 5px; cursor: pointer; z-index: 10001; border-radius: 5px; height: 30px; width: auto; line-height: 30px; padding: 0px 15px; font-size: 16px; background: rgb(0, 0, 0) !important; border: none !important; color: white !important;"><span aria-hidden="true">Close <b role="emphasis">&nbsp;×</b></span></button><iframe id="docbox-iframe" allowfullscreen="" style="width: 100%; height: 100%; border: none; border-radius: 5px;" title="Document Viewer"></iframe></div></div></body></html>
