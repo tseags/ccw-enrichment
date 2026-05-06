@@ -15,6 +15,8 @@ Standalone internal data-enrichment app for CCW vendor directory operations.
    - `supabase/migrations/0001_init.sql` — core schema
    - `supabase/migrations/0002_enrichment_jobs.sql` — job queue + RPCs
    - `supabase/migrations/0003_seed_california_counties.sql` — all 58 CA counties (idempotent)
+   - `supabase/migrations/0004_enriched_vendor_county_listings.sql` — directory listings table (CSV sync target)
+   - `supabase/migrations/0005_add_google_place_columns.sql` — `google_place_id` / `google_reviews_url` on listings
 4. Start app: `npm run dev`
 
 ## MVP Routes
@@ -60,6 +62,57 @@ All tuneable via environment variables (see `.env.example`):
 For a full county like San Diego (~100+ vendors), the defaults give a
 conservative crawl rate: ~3 vendors in parallel, at most 1 request per host
 at a time, with 1.5 s + jitter between requests to the same domain.
+
+## Google Place ID backfill (directory listings)
+
+Use `scripts/backfill-google-place-ids.ts` to resolve Google Place IDs from vendor name + location via official Places APIs (Find Place → Text Search fallback → selective Place Details). Results merge into CSV columns `google_place_id`, `google_reviews_url`, plus QA columns `match_confidence`, `match_reason`, `raw_candidate_place_ids`, `error_message`.
+
+### Env setup
+
+- Add `GOOGLE_PLACES_API_KEY` to `.env.local` (see `.env.example`).
+- Apply migration `supabase/migrations/0005_add_google_place_columns.sql` before reloading enriched CSV into Supabase.
+
+### Commands (repo root)
+
+Dry-run (no files written; still calls Google APIs):
+
+```bash
+npm run google-placeids:backfill -- --dry-run
+```
+
+Apply → write `ccw-scraper/data/enriched/all-vendors.with-google-placeids.csv` + review/checkpoint/cache under `tmp/`:
+
+```bash
+npm run google-placeids:backfill -- --apply
+```
+
+Apply in-place on canonical CSV (timestamped backup next to `all-vendors.csv`):
+
+```bash
+npm run google-placeids:backfill -- --apply --in-place
+```
+
+Optional: include medium-confidence matches when filling IDs:
+
+```bash
+npm run google-placeids:backfill -- --apply --apply-confidence=high,medium
+```
+
+Reload Supabase from CSV (full replace — requires migration `0005` applied):
+
+```bash
+npm run db:load-enriched
+```
+
+Optional direct Supabase updates (still merges QA columns to output CSV when `--apply`):
+
+```bash
+npm run google-placeids:backfill -- --apply --source=supabase --apply-supabase
+```
+
+### Review output
+
+Open `tmp/google-placeid-review-needed.csv` for rows where `match_confidence` is not `high`. After manual fixes, merge IDs into `all-vendors.csv` or rerun with stricter inputs.
 
 ## Notes
 - This is intentionally a production-minded MVP scaffold.

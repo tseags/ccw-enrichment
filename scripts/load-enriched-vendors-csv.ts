@@ -39,7 +39,9 @@ function toRow(r: CsvRow) {
     logo_path: (r.logo_path ?? "").trim() || null,
     instructor_image_paths: (r.instructor_image_paths ?? "").trim() || null,
     training_image_paths: (r.training_image_paths ?? "").trim() || null,
-    enriched_at: (r.enriched_at ?? "").trim() || null
+    enriched_at: (r.enriched_at ?? "").trim() || null,
+    google_place_id: (r.google_place_id ?? "").trim() || null,
+    google_reviews_url: (r.google_reviews_url ?? "").trim() || null
   };
 }
 

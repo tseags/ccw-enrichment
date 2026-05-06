@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "worker": "tsx --env-file=.env.local scripts/enrichment-worker.ts",
-    "db:load-enriched": "tsx --env-file=.env.local scripts/load-enriched-vendors-csv.ts"
+    "db:load-enriched": "tsx --env-file=.env.local scripts/load-enriched-vendors-csv.ts",
+    "google-placeids:backfill": "tsx --env-file=.env.local scripts/backfill-google-place-ids.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
