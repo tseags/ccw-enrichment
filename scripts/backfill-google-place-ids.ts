@@ -135,7 +135,7 @@ function parseArgs(argv: string[]): CliConfig {
     maxRetries: Math.max(0, Number(raw["max-retries"] ?? 3)),
     resume: parseBoolFlag(raw.resume, true),
     applySupabase: parseBoolFlag(raw["apply-supabase"], false),
-    supabaseTable: String(raw["supabase-table"] ?? "enriched_vendor_county_listings")
+    supabaseTable: String(raw["supabase-table"] ?? "carry_class_vendor_data")
   };
 }
 

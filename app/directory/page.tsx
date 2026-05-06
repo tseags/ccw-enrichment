@@ -43,7 +43,7 @@ function groupByVendor(rows: EnrichedListing[]) {
 export default async function DirectoryPage() {
   const supabase = getSupabaseAdminClient();
   const { data, error } = await supabase
-    .from("enriched_vendor_county_listings")
+    .from("carry_class_vendor_data")
     .select(
       "id, county, needs_review, vendor_name, instructor_names, email, phone, website_url, booking_capability, city, state, address, price_16hr_full, price_8hr_renewal, price_add_a_gun, vendor_description, crawl_status, enrichment_confidence, normalized_vendor_name"
     )
@@ -54,11 +54,12 @@ export default async function DirectoryPage() {
     return (
       <section className="space-y-3 rounded border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
         <h2 className="text-lg font-semibold">Directory not available</h2>
-        <p>Supabase returned an error (often missing table before migration 0004 is applied):</p>
+        <p>Supabase returned an error (often missing table before migrations through 0006 are applied):</p>
         <pre className="overflow-x-auto rounded bg-white p-2 text-xs">{error.message}</pre>
         <p className="text-slate-700">
-          Apply <code className="rounded bg-white px-1">supabase/migrations/0004_enriched_vendor_county_listings.sql</code> in the
-          Supabase SQL editor or CLI, then run <code className="rounded bg-white px-1">npm run db:load-enriched</code>.
+          Apply repo migrations in the Supabase SQL editor or CLI (through{' '}
+          <code className="rounded bg-white px-1">0006_rename_enriched_vendor_to_carry_class_vendor_data.sql</code>), then run{' '}
+          <code className="rounded bg-white px-1">npm run db:load-enriched</code>.
         </p>
       </section>
     );
@@ -77,7 +78,7 @@ export default async function DirectoryPage() {
       </div>
 
       {groups.length === 0 ? (
-        <p className="text-sm text-slate-600">No rows yet. Run migration 0004, then run npm run db:load-enriched.</p>
+        <p className="text-sm text-slate-600">No rows yet. Apply migrations through 0006, then run npm run db:load-enriched.</p>
       ) : (
         <ul className="space-y-6">
           {groups.map(([key, listings]) => {

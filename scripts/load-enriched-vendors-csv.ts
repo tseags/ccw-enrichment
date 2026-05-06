@@ -1,8 +1,13 @@
 /**
- * Full replace of enriched_vendor_county_listings from ccw-scraper CSV master.
+ * Full replace of carry_class_vendor_data from ccw-scraper CSV master.
  *
  * Usage (from repo root):
  *   npm run db:load-enriched
+ *   npm run db:load-enriched -- --csv=ccw-scraper/data/enriched/all-vendors.with-google-placeids.csv
+ *   ENRICHED_CSV_PATH=ccw-scraper/data/enriched/foo.csv npm run db:load-enriched
+ *
+ * Path precedence: --csv / --csv=… overrides ENRICHED_CSV_PATH; default is all-vendors.csv.
+ * Relative paths resolve from process.cwd() (repo root).
  *
  * Requires .env.local with Supabase service role (same as other scripts).
  */
@@ -11,8 +16,29 @@ import path from "node:path";
 import Papa from "papaparse";
 import { getSupabaseAdminClient } from "@/lib/db/supabase";
 
-const CSV_PATH = path.join(process.cwd(), "ccw-scraper", "data", "enriched", "all-vendors.csv");
+const DEFAULT_CSV_RELATIVE = path.join("ccw-scraper", "data", "enriched", "all-vendors.csv");
 const CHUNK = 250;
+
+function resolvedCsvPath(): string {
+  const argv = process.argv.slice(2);
+  let fromCli: string | undefined;
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    if (a.startsWith("--csv=")) {
+      fromCli = a.slice("--csv=".length);
+      break;
+    }
+    if (a === "--csv" && argv[i + 1]) {
+      fromCli = argv[++i];
+      break;
+    }
+  }
+  const explicit = fromCli?.trim() || process.env.ENRICHED_CSV_PATH?.trim();
+  if (!explicit) {
+    return path.join(process.cwd(), DEFAULT_CSV_RELATIVE);
+  }
+  return path.isAbsolute(explicit) ? explicit : path.join(process.cwd(), explicit);
+}
 
 type CsvRow = Record<string, string>;
 
@@ -46,7 +72,9 @@ function toRow(r: CsvRow) {
 }
 
 async function main() {
-  const raw = readFileSync(CSV_PATH, "utf8");
+  const csvPath = resolvedCsvPath();
+  console.log(`Loading CSV: ${csvPath}`);
+  const raw = readFileSync(csvPath, "utf8");
   const parsed = Papa.parse<CsvRow>(raw, { header: true, skipEmptyLines: true });
   if (parsed.errors.length) {
     console.error(parsed.errors);
@@ -59,15 +87,15 @@ async function main() {
 
   const supabase = getSupabaseAdminClient();
 
-  const { error: delErr } = await supabase.from("enriched_vendor_county_listings").delete().not("id", "is", null);
+  const { error: delErr } = await supabase.from("carry_class_vendor_data").delete().not("id", "is", null);
   if (delErr) {
-    console.error("Delete failed (did you apply migration 0004?)", delErr);
+    console.error("Delete failed (did you apply migrations through 0006?)", delErr);
     process.exit(1);
   }
 
   for (let i = 0; i < rows.length; i += CHUNK) {
     const chunk = rows.slice(i, i + CHUNK);
-    const { error: insErr } = await supabase.from("enriched_vendor_county_listings").insert(chunk);
+    const { error: insErr } = await supabase.from("carry_class_vendor_data").insert(chunk);
     if (insErr) {
       console.error(`Insert failed at offset ${i}`, insErr);
       process.exit(1);
@@ -75,7 +103,7 @@ async function main() {
     console.log(`Inserted ${Math.min(i + CHUNK, rows.length)} / ${rows.length}`);
   }
 
-  console.log(`Done. ${rows.length} rows loaded from ${CSV_PATH}`);
+  console.log(`Done. ${rows.length} rows loaded from ${csvPath}`);
 }
 
 main().catch((e) => {

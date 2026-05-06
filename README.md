@@ -15,8 +15,9 @@ Standalone internal data-enrichment app for CCW vendor directory operations.
    - `supabase/migrations/0001_init.sql` — core schema
    - `supabase/migrations/0002_enrichment_jobs.sql` — job queue + RPCs
    - `supabase/migrations/0003_seed_california_counties.sql` — all 58 CA counties (idempotent)
-   - `supabase/migrations/0004_enriched_vendor_county_listings.sql` — directory listings table (CSV sync target)
+   - `supabase/migrations/0004_enriched_vendor_county_listings.sql` — directory listings table (created as `enriched_vendor_county_listings`, renamed in 0006)
    - `supabase/migrations/0005_add_google_place_columns.sql` — `google_place_id` / `google_reviews_url` on listings
+   - `supabase/migrations/0006_rename_enriched_vendor_to_carry_class_vendor_data.sql` — rename listings table to `carry_class_vendor_data` (CSV sync target)
 4. Start app: `npm run dev`
 
 ## MVP Routes

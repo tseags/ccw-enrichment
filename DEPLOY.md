@@ -1,6 +1,6 @@
 # Deploy: GitHub → Supabase → Vercel
 
-This repo is a **Next.js** app at the root plus **`ccw-scraper/`** (Python enrichment). Production traffic goes to **Vercel**; vendor directory data lives in **Supabase** table `enriched_vendor_county_listings`, loaded from `ccw-scraper/data/enriched/all-vendors.csv`.
+This repo is a **Next.js** app at the root plus **`ccw-scraper/`** (Python enrichment). Production traffic goes to **Vercel**; vendor directory data lives in **Supabase** table `carry_class_vendor_data`, loaded from `ccw-scraper/data/enriched/all-vendors.csv`.
 
 ## 1. Supabase project
 
@@ -31,6 +31,8 @@ Run each file in order in **SQL Editor** (new query, paste, run):
 - `supabase/migrations/0002_enrichment_jobs.sql`
 - `supabase/migrations/0003_seed_california_counties.sql`
 - `supabase/migrations/0004_enriched_vendor_county_listings.sql`
+- `supabase/migrations/0005_add_google_place_columns.sql`
+- `supabase/migrations/0006_rename_enriched_vendor_to_carry_class_vendor_data.sql`
 
 ## 3. Load enriched CSV into Supabase
 
@@ -41,7 +43,7 @@ npm install
 npm run db:load-enriched
 ```
 
-This replaces all rows in `enriched_vendor_county_listings` with the current `ccw-scraper/data/enriched/all-vendors.csv`.
+This replaces all rows in `carry_class_vendor_data` with the current `ccw-scraper/data/enriched/all-vendors.csv`.
 
 Whenever you update the CSV locally, commit it, then run `npm run db:load-enriched` again (or run it in CI with secrets—see below).
 
