@@ -1,0 +1,18 @@
+field,current_value,proposed_value,source,review_notes
+status,existing row,APPLIED 2026-07-01,Solano CCW Approved Trainers PDF + Threat Scenarios class listing,Updated in all-vendors.csv and enriched/all-vendors.csv
+county,solano,solano,,
+vendor_name,29 Outdoor Gear,29 Outdoor Gear,,
+instructor_names,(empty),Jerry Kunzman; Brad Engmann; Steve Harris; Marco Innocenti; Craig Wong; Bryan Lum; James Yeom; Stephen Newell; Kevin Holman; Josh Leong,Threat Scenarios instructors page,
+email,Jerry@29outdoorgear.com,Jerry@29outdoorgear.com,Solano County PDF,
+phone,707-647-2511,707-647-2511,,
+website_url,https://29outdoorgear.com,https://29outdoorgear.com,,
+booking_capability,unclear,direct_booking,Threat Scenarios Book Now,
+city,(empty),American Canyon,29outdoorgear.com,
+state,CA,CA,,
+address,(empty),"3431 Broadway A5, American Canyon, CA 94503",29outdoorgear.com shop HQ; class day 1 American Canyon / day 2 Richmond,
+price_16hr_full,(empty),475,Defensive Handgun II listing,
+price_8hr_renewal,(empty),275,Defensive Handgun II listing,
+price_add_a_gun,(empty),175,Modification qualifications,
+vendor_description,retail-only blurb,full CCW description applied,Class listing + instructors page,
+enrichment_confidence,low,high,,
+crawl_status,success,success,,
