@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 export default function ImportPage() {
@@ -92,6 +93,16 @@ export default function ImportPage() {
       <h2 className="text-xl font-semibold">Import County Source</h2>
       <p className="text-sm text-slate-600">
         Set the county by name, slug (e.g. san-diego), or UUID. Then paste text, upload a PDF, or give a URL to a PDF or an HTML page (tables are extracted).
+      </p>
+      <p className="text-sm text-slate-500">
+        Enriched vendor listings shown on the site are loaded from Supabase table{" "}
+        <code className="rounded bg-slate-100 px-1 text-slate-800">carry_class_vendor_data</code> — open{" "}
+        <Link href="/directory" className="font-medium text-blue-700 underline">
+          Directory
+        </Link>{" "}
+        to browse them (reload after{" "}
+        <code className="rounded bg-slate-100 px-1">npm run db:load-enriched</code>
+        ).
       </p>
       <div className="grid gap-3 rounded border bg-white p-4">
         <input
