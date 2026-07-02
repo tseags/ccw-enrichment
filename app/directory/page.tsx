@@ -1,72 +1,26 @@
-import { getSupabaseAdminClient } from "@/lib/db/supabase";
+import { getDirectoryVendorGroups } from "@/lib/db/carry-class-queries";
 
-export const dynamic = "force-dynamic";
-
-type EnrichedListing = {
-  id: string;
-  county: string;
-  needs_review: string | null;
-  vendor_name: string;
-  instructor_names: string | null;
-  email: string | null;
-  phone: string | null;
-  website_url: string | null;
-  booking_capability: string | null;
-  city: string | null;
-  state: string | null;
-  address: string | null;
-  price_16hr_full: string | null;
-  price_8hr_renewal: string | null;
-  price_add_a_gun: string | null;
-  vendor_description: string | null;
-  crawl_status: string | null;
-  enrichment_confidence: string | null;
-  normalized_vendor_name: string | null;
-};
-
-function groupByVendor(rows: EnrichedListing[]) {
-  const map = new Map<string, EnrichedListing[]>();
-  for (const r of rows) {
-    const key = r.normalized_vendor_name ?? r.vendor_name.trim().toLowerCase();
-    const list = map.get(key) ?? [];
-    list.push(r);
-    map.set(key, list);
-  }
-  for (const list of map.values()) {
-    list.sort((a, b) => a.county.localeCompare(b.county));
-  }
-  return [...map.entries()].sort((a, b) =>
-    (a[1][0]?.vendor_name ?? "").localeCompare(b[1][0]?.vendor_name ?? "", undefined, { sensitivity: "base" })
-  );
-}
+export const revalidate = 3600;
 
 export default async function DirectoryPage() {
-  const supabase = getSupabaseAdminClient();
-  const { data, error } = await supabase
-    .from("carry_class_vendor_data")
-    .select(
-      "id, county, needs_review, vendor_name, instructor_names, email, phone, website_url, booking_capability, city, state, address, price_16hr_full, price_8hr_renewal, price_add_a_gun, vendor_description, crawl_status, enrichment_confidence, normalized_vendor_name"
-    )
-    .order("vendor_name", { ascending: true })
-    .order("county", { ascending: true });
+  const result = await getDirectoryVendorGroups();
 
-  if (error) {
+  if (!result.ok) {
     return (
       <section className="space-y-3 rounded border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
         <h2 className="text-lg font-semibold">Directory not available</h2>
         <p>Supabase returned an error (often missing table before migrations through 0006 are applied):</p>
-        <pre className="overflow-x-auto rounded bg-white p-2 text-xs">{error.message}</pre>
+        <pre className="overflow-x-auto rounded bg-white p-2 text-xs">{result.error}</pre>
         <p className="text-slate-700">
-          Apply repo migrations in the Supabase SQL editor or CLI (through{' '}
-          <code className="rounded bg-white px-1">0006_rename_enriched_vendor_to_carry_class_vendor_data.sql</code>), then run{' '}
+          Apply repo migrations in the Supabase SQL editor or CLI (through{" "}
+          <code className="rounded bg-white px-1">0006_rename_enriched_vendor_to_carry_class_vendor_data.sql</code>), then run{" "}
           <code className="rounded bg-white px-1">npm run db:load-enriched</code>.
         </p>
       </section>
     );
   }
 
-  const rows = (data ?? []) as EnrichedListing[];
-  const groups = groupByVendor(rows);
+  const groups = result.groups;
 
   return (
     <section className="space-y-6">
