@@ -55,7 +55,7 @@ LINK_KEYWORDS = re.compile(
 FALLBACK_PATHS = ["/about", "/courses"]
 
 OUTPUT_COLUMNS = [
-    "county", "vendor_name", "instructor_names", "email", "phone",
+    "county", "needs_review", "vendor_name", "instructor_names", "email", "phone",
     "website_url", "booking_capability", "city", "state", "address",
     "price_16hr_day1", "price_16hr_day2", "price_16hr_full",
     "price_8hr_renewal", "price_8hr_initial", "price_add_a_gun",
@@ -566,6 +566,7 @@ async def _enrich_one(
     """Enrich a single vendor row; never raises."""
     out: dict[str, Any] = {col: None for col in OUTPUT_COLUMNS}
     out["county"] = row.get("county", "")
+    out["needs_review"] = row.get("needs_review", "") or ""
     out["vendor_name"] = row.get("vendor_name", "")
     out["instructor_names"] = row.get("instructor_names", "")
     out["email"] = row.get("email", "")
