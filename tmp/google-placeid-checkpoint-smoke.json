@@ -1,0 +1,111 @@
+{
+  "processed": {
+    "alpine|california online ccw|markleeville|ca": {
+      "googlePlaceId": "ChIJF84NLVLdmYARK2QK0HQ_I3o",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJF84NLVLdmYARK2QK0HQ_I3o",
+      "matchConfidence": "low",
+      "matchReason": "exact_phone_match|website_domain_conflict|name_mismatch|city_match|state_match|address_proximity_partial|score=44|margin=10|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJTVUmGrhblIARwzDNc6fYy_k",
+        "ChIJb5vwCDbX3IARhM2tnH-YMzk",
+        "ChIJF84NLVLdmYARK2QK0HQ_I3o"
+      ],
+      "errorMessage": ""
+    },
+    "alpine|case defensive training group|angels camp|ca": {
+      "googlePlaceId": "",
+      "googleReviewsUrl": "",
+      "matchConfidence": "none",
+      "matchReason": "no_candidates",
+      "rawCandidatePlaceIds": [],
+      "errorMessage": "ZERO_RESULTS"
+    },
+    "alpine|dynamic ccw academy|arnold|ca": {
+      "googlePlaceId": "ChIJdSVvK2hx3IARGkh4aW0DGTY",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJdSVvK2hx3IARGkh4aW0DGTY",
+      "matchConfidence": "none",
+      "matchReason": "phone_conflict|website_domain_conflict|name_mismatch|city_mismatch|state_match|score=-39|margin=999|source=text_search",
+      "rawCandidatePlaceIds": [
+        "ChIJdSVvK2hx3IARGkh4aW0DGTY"
+      ],
+      "errorMessage": ""
+    },
+    "alpine|northern firearms instruction||ca": {
+      "googlePlaceId": "ChIJPxg-Prrs0lQR33I_XI74Apw",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJPxg-Prrs0lQR33I_XI74Apw",
+      "matchConfidence": "low",
+      "matchReason": "phone_conflict|website_domain_match|strong_name_similarity|state_match|address_proximity_strong|score=53|margin=999|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJPxg-Prrs0lQR33I_XI74Apw"
+      ],
+      "errorMessage": ""
+    },
+    "alpine|sierra ccw firearms training|truckee|ca": {
+      "googlePlaceId": "ChIJM65CcMffm4ARXeEErGGuSwQ",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJM65CcMffm4ARXeEErGGuSwQ",
+      "matchConfidence": "high",
+      "matchReason": "exact_phone_match|website_domain_match|strong_name_similarity|city_match|state_match|address_proximity_strong|score=123|margin=999|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJM65CcMffm4ARXeEErGGuSwQ"
+      ],
+      "errorMessage": ""
+    },
+    "amador|accuracy firearm training|rocklin|ca": {
+      "googlePlaceId": "ChIJObSaaWsfm4AR2j2iWsg78oE",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJObSaaWsfm4AR2j2iWsg78oE",
+      "matchConfidence": "high",
+      "matchReason": "exact_phone_match|website_domain_match|strong_name_similarity|city_mismatch|state_match|address_proximity_partial|score=100|margin=999|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJObSaaWsfm4AR2j2iWsg78oE"
+      ],
+      "errorMessage": ""
+    },
+    "amador|all american safety llc|el dorado hills|ca": {
+      "googlePlaceId": "ChIJG4ajTbcJ9IgRU7CTESGSAbI",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJG4ajTbcJ9IgRU7CTESGSAbI",
+      "matchConfidence": "none",
+      "matchReason": "moderate_name_similarity|city_mismatch|state_mismatch|score=4|margin=8|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJBwLD6JONmoARbzK8Na1dMBg",
+        "ChIJrZW97Yv0moARpHczU-WOsVY",
+        "ChIJ2boM-ZONmoAR-NdtceGMV3g",
+        "ChIJG4ajTbcJ9IgRU7CTESGSAbI"
+      ],
+      "errorMessage": ""
+    },
+    "amador|amador ccw instruction|fiddletown|ca": {
+      "googlePlaceId": "ChIJb_NMbH97moARiDaxFtOwaK4",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJb_NMbH97moARiDaxFtOwaK4",
+      "matchConfidence": "none",
+      "matchReason": "phone_conflict|website_domain_conflict|name_mismatch|city_mismatch|state_match|address_proximity_strong|score=-27|margin=999|source=text_search",
+      "rawCandidatePlaceIds": [
+        "ChIJb_NMbH97moARiDaxFtOwaK4"
+      ],
+      "errorMessage": ""
+    },
+    "amador|applied firearms training llc|plymouth|ca": {
+      "googlePlaceId": "ChIJZwoKrKt_3IARqFUeA6SDY8k",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJZwoKrKt_3IARqFUeA6SDY8k",
+      "matchConfidence": "none",
+      "matchReason": "phone_conflict|name_mismatch|city_mismatch|state_match|score=-31|margin=999|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJZwoKrKt_3IARqFUeA6SDY8k"
+      ],
+      "errorMessage": ""
+    },
+    "amador|archer ccw||ca": {
+      "googlePlaceId": "ChIJcSVDn7tNw4ARnYQRzxG1El8",
+      "googleReviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJcSVDn7tNw4ARnYQRzxG1El8",
+      "matchConfidence": "none",
+      "matchReason": "name_mismatch|state_match|score=-9|margin=0|source=find_place",
+      "rawCandidatePlaceIds": [
+        "ChIJdSVvK2hx3IARGkh4aW0DGTY",
+        "ChIJObSaaWsfm4AR2j2iWsg78oE",
+        "ChIJJ-hlSEs9kIARUI6NZLiQnew",
+        "ChIJcSVDn7tNw4ARnYQRzxG1El8",
+        "ChIJTXU660Jq2YARgzUMwpHfcmk"
+      ],
+      "errorMessage": ""
+    }
+  }
+}
