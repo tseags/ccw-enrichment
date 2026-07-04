@@ -45,7 +45,7 @@ CLAUDE_MAX_RETRIES = 4
 CLAUDE_RETRY_BASE_SECONDS = 2.0
 MAX_EXTRA_PAGES = 2
 TEXT_CHAR_LIMIT = 20_000
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5-20250929")
 CLAUDE_MAX_TOKENS = 1000
 
 LINK_KEYWORDS = re.compile(
@@ -358,8 +358,13 @@ class Crawler:
             await asyncio.sleep(wait)
         self._domain_last_request[domain] = time.monotonic()
 
-    def _sync_get(self, url: str, stream: bool = False) -> requests.Response:
-        return self._session.get(url, timeout=REQUEST_TIMEOUT, stream=stream)
+    def _sync_get(self, url: str, stream: bool = False, verify: bool = True) -> requests.Response:
+        return self._session.get(url, timeout=REQUEST_TIMEOUT, stream=stream, verify=verify)
+
+    def _sync_get_insecure(self, url: str) -> requests.Response:
+        # Some public vendor sites have expired/self-signed/misconfigured certs.
+        # Keep the default path strict, then fall back only after an SSL failure.
+        return self._sync_get(url, verify=False)
 
     async def fetch(self, url: str) -> requests.Response | None:
         domain = _domain(url)
@@ -378,6 +383,18 @@ class Crawler:
                             continue
                         resp.raise_for_status()
                         return resp
+                    except requests.exceptions.SSLError as exc:
+                        logger.warning("SSL error %s: %s; retrying without certificate verification", url, exc)
+                        try:
+                            resp = await loop.run_in_executor(None, self._sync_get_insecure, url)
+                            resp.raise_for_status()
+                            return resp
+                        except Exception as insecure_exc:
+                            if attempt < MAX_RETRIES:
+                                logger.warning("Insecure retry error %s (attempt %d): %s", url, attempt + 1, insecure_exc)
+                                await asyncio.sleep(2 ** attempt)
+                            else:
+                                logger.error("Insecure retry failed after %d attempts: %s – %s", MAX_RETRIES + 1, url, insecure_exc)
                     except Exception as exc:
                         if attempt < MAX_RETRIES:
                             logger.warning("Request error %s (attempt %d): %s", url, attempt + 1, exc)
@@ -426,6 +443,11 @@ class Crawler:
         homepage_html: str | None = None
         resp = await self.fetch(website_url)
 
+        if resp is None and website_url.startswith("https://"):
+            http_url = "http://" + website_url[len("https://"):]
+            logger.info("Trying HTTP fallback %s", http_url)
+            resp = await self.fetch(http_url)
+
         if resp is not None:
             homepage_html = resp.text
         else:
@@ -434,6 +456,10 @@ class Crawler:
                 fallback = base + path
                 logger.info("Trying fallback %s", fallback)
                 resp = await self.fetch(fallback)
+                if resp is None and fallback.startswith("https://"):
+                    http_fallback = "http://" + fallback[len("https://"):]
+                    logger.info("Trying HTTP fallback %s", http_fallback)
+                    resp = await self.fetch(http_fallback)
                 if resp is not None:
                     homepage_html = resp.text
                     break
