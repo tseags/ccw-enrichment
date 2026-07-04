@@ -1,0 +1,18 @@
+field,current_value,proposed_value,source,review_notes
+status,existing row,APPLIED 2026-07-04,1791training.com manual review,Updated in all-vendors.csv and enriched/all-vendors.csv
+county,siskiyou,siskiyou,,
+vendor_name,1791 Firearms Training,1791 Firearms Training,,
+instructor_names,Beau McAdam,Beau McAdam,,
+email,Beau.McAdam@gmail.com,beau@1791training.com,1791training.com,
+phone,510-305-6629,510-305-6629,,
+website_url,(empty),https://1791training.com/,1791training.com,
+booking_capability,(empty),none,No booking on site,
+city,(empty),(empty),,
+state,CA,CA,,
+address,(empty),(empty),,
+price_16hr_full,(empty),(empty),No pricing on site,
+price_8hr_renewal,(empty),(empty),No pricing on site,
+price_add_a_gun,(empty),(empty),No pricing on site,
+vendor_description,(empty),About Beau bio applied,1791training.com About Beau,
+enrichment_confidence,(empty),medium,,
+crawl_status,no_website,success,,

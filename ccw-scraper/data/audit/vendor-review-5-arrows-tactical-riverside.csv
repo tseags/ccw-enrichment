@@ -1,0 +1,8 @@
+field,current_value,proposed_value,source,review_notes
+status,existing row,APPLIED 2026-07-04,Manual review,Updated in enriched/all-vendors.csv
+county,riverside,riverside,,
+vendor_name,5 Arrows Tactical,5 Arrows Tactical,,
+price_16hr_full,(empty),270,Manual review,
+price_8hr_renewal,(empty),180,Manual review,
+enrichment_confidence,low,high,,
+confidence_notes,No pricing on website,manual; pricing 270/180,,
