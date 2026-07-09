@@ -348,7 +348,7 @@ SKIP_COUNTIES = {
     "sacramento":     "no list published — contact only",
     "san-bernardino": "no list published — contact only",
     "san-francisco":  "no list published — contact only",
-    "san-mateo":      "no list published — contact only",
+    "san-mateo":      "memo-only — vendor list from applicant approval memo (not publicly posted)",
     "santa-barbara":  "no list published — contact only",
     "yolo":           "opted out — no longer publishes vendor list",
 }
